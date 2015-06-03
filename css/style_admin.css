@@ -1,0 +1,779 @@
+/* CSS Document */
+.headerBack
+{
+	background-color: #38381D;
+}
+.lightBrownBack
+{
+	background-color: #666666;
+}
+.lightBrownBack1
+{
+	background-color: #38381D;
+}
+.leftMenuBold
+{
+	font-size:12px; 
+	color: #FFBB55; 
+	font-family: Verdana; 
+	font-weight:bold;
+}
+
+.leftMenuNor
+{
+	font-size:12px; 
+	color:#FFFFFF; 
+	font-family: Verdana; 
+	font-weight:normal;
+}
+.leftMenuNor A
+{
+	font-size:12px; 
+	color:#FFFFFF; 
+	font-family: Verdana; 
+	font-weight:normal;
+	text-decoration: none;
+}
+
+.leftMenuNor A:hover
+{
+	font-size:12px; 
+	color:#FFFFFF; 
+	font-family: Verdana; 
+	font-weight:normal;
+	text-decoration: underline;
+}
+
+.tableBorder
+{
+	border-color: #CCCCCC;
+	border-style: solid;
+	border-width: 1px;
+}
+
+.tableHeadMain
+{
+	font-size:16px; 
+	color: #ffffff; 
+	font-family: Verdana; 
+	font-weight:normal;
+	background-color: #2c679f;
+	padding:5px;
+}
+
+.tableHeadMainL
+{
+	font-size:16px; 
+	color: #ffffff; 
+	font-family: Verdana; 
+	font-weight:bold;
+	background-color: #2c679f;
+	padding:5px;
+}
+
+.tableSubHead
+{
+	font-size:16px; 
+	color: #ffffff; 
+	font-family: Verdana; 
+	font-weight:normal;
+	background-color: ;
+}
+
+.tdText
+{
+	font-size:11px; 
+	color: #000000; 
+	font-family: Verdana; 
+	font-weight: normal;
+}
+
+.tdTextBold
+{
+	font-size:11px; 
+	color: #000000; 
+	font-family: Verdana; 
+	font-weight: bold;
+}
+
+input
+{
+	font-size:11px; 
+	color: #000000; 
+	font-family: Verdana; 
+	font-weight: normal;
+	
+}
+input[type=button,type=submit]
+{
+	padding:10px;
+}
+select
+{
+	font-size:11px; 
+	color: #000000; 
+	font-family: Verdana; 
+	font-weight: normal;
+}
+
+.errMsg
+{
+	font-size:11px; 
+	color: red; 
+	font-family: Verdana; 
+	font-weight: bold;
+}
+
+.errMsgB
+{
+	font-size:12px; 
+	color: red; 
+	font-family: Verdana; 
+	font-weight: bold;
+}
+
+.searchBack
+{
+	background-color: #A4C7E6;
+	color:#FFFFFF;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+.searchLinkL
+{
+	
+	font-weight: bold;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+
+.searchLinkD
+{
+	background-color:#22558E;
+	font-family: Verdana;
+	font-size: 12px;
+	font-weight: bold;
+	line-height:25px;
+	color: #FFFFFF;
+}
+
+/*...jig....*/
+.searchTr
+{
+	background-color:#7fb2eb;
+	font-family: Verdana;
+	font-size: 12px;
+	font-weight: bold;
+	line-height:25px;
+	color: #FFFFFF;
+}
+.searchTr input[type=text] {
+	font-size:11px;
+	width:142px;
+	height:22px;
+}
+/*...jig....*/
+.trEven
+{
+	font-size:11px; 
+	color: #000000; 
+	font-family: Verdana; 
+	font-weight: normal;
+	background-color: #FFFFFF;
+	line-height:25px;
+}
+
+.trEven A
+{
+	font-size:11px; 
+	color: #000000; 
+	font-family: Verdana; 
+	font-weight: bold;
+	
+	text-decoration: underline;
+}
+
+.trEven A:hover
+{
+	font-size:11px; 
+	color: #000000; 
+	font-family: Verdana; 
+	font-weight: bold;
+	
+	text-decoration: none;
+}
+
+.trOdd
+{
+	font-size:11px; 
+	color: #000000; 
+	font-family: Verdana; 
+	font-weight: normal;
+	background-color: #E6EFF9;
+	line-height:25px;
+}
+
+.trOdd A
+{
+	font-size:11px; 
+	color: #000000; 
+	font-family: Verdana; 
+	font-weight: bold;
+	
+	text-decoration: underline;
+}
+.trOdd A:hover
+{
+	font-size:11px; 
+	color: #000000; 
+	font-family: Verdana; 
+	font-weight: bold;
+	
+	text-decoration: none;
+}
+
+.addLink
+{
+	font-size:12px; 
+	color: #38381D; 
+	font-family: Verdana; 
+	font-weight: bold;
+}
+
+.delLink
+{
+	font-size:11px; 
+	color: #38381D; 
+	font-family: Verdana; 
+	font-weight: bold;
+	text-decoration: underline;
+	cursor: hand;
+}
+
+.delLink:hover
+{
+	font-size:11px; 
+	color: #765432; 
+	font-family: Verdana; 
+	font-weight: bold;
+	text-decoration: none;
+	cursor: hand;
+}
+
+.whiteLink
+{
+	font-size:12px; 
+	color: #ffffff; 
+	font-family: Verdana; 
+	font-weight:bold;
+	text-decoration: none;
+}
+.whiteLink:hover
+{
+	font-size:12px; 
+	color: #ffffff; 
+	font-family: Verdana; 
+	font-weight:bold;
+	text-decoration: underline;
+}
+.smallfont
+{
+	font-size:10px; 
+	color: #999999; 
+	font-family: Verdana; 
+	font-weight:normal;
+	text-decoration: none;
+}
+.Box1 
+{
+	 color : #38381D;
+	 font-family: Verdana, Arial, Helvetica, sans-serif;
+	 font-size: 16px;
+	 font-weight:bold;
+	 background-color:#ffffff;
+}
+
+.Box2 
+{
+	 color : #ffffff;
+	 font-family: Verdana, Arial, Helvetica, sans-serif;
+	 font-size: 16px;
+	 font-weight:bold;
+	 background-color:#38381D;
+}
+/*.......by jig........*/
+#mask {
+  position:absolute;
+  left:0;
+  top:0;
+  z-index:9000;
+  background-color:#000;
+  display:;
+}
+/*.........................*/
+.window {
+  left:50%;
+  top:50%;
+  width:700px; 
+  height:500px;
+  z-index:9999;
+  background-color:#ffffff;
+}
+
+.trRefill
+{
+	font-size:11px; 
+	color: #000000; 
+	font-family: Verdana; 
+	font-weight: normal;
+	background-color:#339999;
+}
+
+
+html, body, table, tr, td, th, div, img, ul, ol, li, h1, h2, h3, h4, h5, hr { padding:0px; margin:0px; }
+p { color:#333333; }
+img { border:0px; }
+h3 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	text-transform: uppercase;
+	color: #FFFFFF;
+	background-color: #467caf;
+	padding: 8px;
+	margin-bottom: 5px;
+}
+.floatleft { float:left; }
+.floatright { float:right; }
+.clearfix { clear:both; }
+body {
+	margin:0px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #666666;
+}
+#main {
+	margin-right: auto;
+	margin-left: auto;
+	width: 100%;
+	font-size: 12px;
+	color: #333333;
+}
+.header {
+	background-color: #2c679f;
+	padding: 5px;
+	height: 110px;
+	width: auto;
+	border-top-width: 2px;
+	border-bottom-width: 2px;
+	border-top-style: dashed;
+	border-bottom-style: dashed;
+	border-top-color: #1c4975;
+	border-bottom-color: #1c4975;
+	color: #FFFFFF;
+	margin-bottom: 3px;
+}
+.logo {
+	padding: 5px;
+	height: auto;
+	width: auto;
+	float: left;
+	margin-left: 15px;
+	margin-top: 10px;
+	margin-right: 35px;
+}
+.title {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 30px;
+	color: #FFFFFF;
+	float: left;
+	margin-top: 32px;
+}
+
+.adminTitle {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	color: #2c679f;
+	margin-top: 1px;
+}
+.logout {
+	color: #FFFFFF;
+	float: right;
+	width: auto;
+	font-size: 12px;
+	margin-top: 90px;
+	margin-right: 10px;
+}
+.logout a:link {
+	color: #FFFFFF;
+	font-size: 12px;
+	text-decoration: none;
+}
+.logout a:hover {
+	color: #FFFFFF;
+	font-size: 12px;
+	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+	border-bottom-color: #FFFFFF;
+	border-left-color: #FFFFFF;
+}
+#left-main {
+	width: 250px;
+	float: left;
+	padding: 5px;
+	border: 1px solid #CCCCCC;
+	margin-top: 8px;
+	margin-left: 5px;
+}
+
+#right-main {
+	padding: 5px;
+	width: 73%;
+	margin-left: 10px;
+	margin-top: 3px;
+	border: 2px solid #CCCCCC;
+	float: left;
+}
+#right-main a {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	text-decoration: none;
+}
+#right-main a:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	border-bottom:none;
+}
+.input-field {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333333;
+	padding: 3px;
+	border: 1px solid #666666;
+	line-height: 16px;
+	height: 16px;
+}
+div.sdmenu {
+	width: 240px;
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	padding-bottom: 10px;
+	background: url(bottom.gif) no-repeat  right bottom;
+	color: #fff;
+	margin-top: 3px;
+}
+div.sdmenu div {
+	background: url(title.gif) repeat-x;
+	overflow: hidden;
+}
+div.sdmenu div.collapsed {
+	height: 35px;
+}
+div.sdmenu div span {
+	display: block;
+	color: #FFFFFF;
+	cursor: default;
+	background-color: #2c679f;
+	background-image: url(expanded.gif);
+	background-repeat: no-repeat;
+	background-position: 10px center;
+	padding-right: 25px;
+	padding-left: 10px;
+	font-size: 15px;
+	text-transform: uppercase;
+	font-weight: bold;
+	border: 1px solid #ddd;
+	height: 35px;
+	line-height: 35px;
+}
+div.sdmenu div.collapsed span {
+}
+div.sdmenu div.collapsed span:hover {
+	background-color: #6291bd;
+}
+div.sdmenu div a {
+	display: block;
+	border-bottom: 1px solid #ddd;
+	color: #066;
+	text-decoration: none;
+	padding-top: 5px;
+	padding-right: 10px;
+	padding-bottom: 5px;
+	padding-left: 28px;
+	background-color: #eee;
+	background-image: url(../admin/images/arrow.png);
+	background-repeat: no-repeat;
+	background-position: 10px center;
+	margin-left: 0px;
+}
+div.sdmenu div a.current {
+	background-color: #ccc;
+}
+div.sdmenu div a:hover {
+	color: #fff;
+	text-decoration: none;
+	background-color: #066;
+	background-image: url(../admin/images/arrow-hover.png);
+	background-repeat: no-repeat;
+	background-position: 10px center;
+}
+
+#fotter {
+	background-color: #2c679f;
+	padding: 10px;
+	margin-top: 10px;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-style: dashed;
+	border-bottom-style: dashed;
+	border-top-color: #1c4975;
+	border-bottom-color: #1c4975;
+}
+#fotter a {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFFFFF;
+}
+#fotter a:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333333;
+	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+	border-bottom-color: #999999;
+}
+.reportlinks
+{
+	margin:10px;
+	font-weight:bold;
+	font-size:14px;
+	
+}
+.reportlinks a
+{
+	color:#333333;
+	background-image:url(../admin/images/arrow.png);
+	background-repeat:no-repeat;
+	background-position:10px;
+	padding:25px;
+}
+.reportlinks a:hover
+{
+	color:#333333;
+	background-image:url(../admin/images/arrow.png);
+	background-repeat:no-repeat;
+	background-position:10px;
+	padding:25px;
+}
+#main1 {
+	margin: auto;
+	background-color: #272727;
+	min-height:600px;
+	width: auto;
+	padding-top: 80px;
+}
+.top-nav-login {
+	margin: 0px;
+	padding: 0px;
+	width: 480px;
+}
+.logo1 {
+	background-image: url(../images/logo.jpg);
+	background-repeat: no-repeat;
+	height: 89px;
+	width: 235px;
+	margin-bottom: 10px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-left: 0px;
+	float: left;
+	padding: 0px;
+}
+.login-area {
+	padding: 0px;
+	float: right;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #333333;
+	width: 227px;
+	background-image: url(../images/admin-login-bg.png);
+	background-repeat: no-repeat;
+	margin: 0px;
+	height: 37px;
+}
+.login-bg {
+	height: auto;
+	margin: 0px;
+	padding: 0px;
+}
+.login-conent {
+	background-color: #f8f8fa;
+	height: auto;
+	width: 480px;
+	margin: 0px;
+	padding-right: 20px;
+	padding-left: 20px;
+	padding-bottom: 0px;
+	padding-top: 0px;
+}
+.login-name {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	text-transform: uppercase;
+	color: #333333;
+	text-decoration: none;
+	float: left;
+	width: 130px;
+	font-weight: bold;
+	margin-top: 26px;
+	margin-right: 10px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	padding: 0px;
+}
+.logoin-input-field {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFFFFF;
+	text-decoration: none;
+	background-color: #999999;
+	padding: 3px;
+	margin-top: 26px;
+	width: 300px;
+}
+.top-bg-admin {
+	background-image: url(../images/login-bg-top-01.png);
+	height: 37px;
+	width: 485px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 22px;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-align: right;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	padding-top: 0px;
+	padding-right: 35px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+}
+.copyright {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFFFFF;
+}
+/*..................add by jig.....................*/
+#divForm {
+	background: #FFF; 
+	margin: 10%; 
+	border: 2px solid #CCCCCC;
+	padding: 20px;
+	color:#000000;
+	font-size:14px;
+}
+#divForm input[type=text] {
+	font-size:11px;
+	width:142px;
+	height:22px;
+}
+#divForm input[type=password] {
+	font-size:11px;
+	width:142px;
+	height:22px;
+}
+#divForm select {
+	font-size:11px;
+	width:142px;
+	height:22px;
+}
+.button {
+	height: 31px;
+	color: #FFF;
+	text-decoration: none;
+	font-size: 11px;
+	font-family:Tahoma;
+	font-weight:bold;
+	text-transform:uppercase;
+	text-align: center;
+	padding:5px 15px;
+    *padding:5px 5px;
+	background: #2c679f;
+	background: -moz-linear-gradient(top, #2c679f, #2c679f 50%, #2c679f 51%, #2c679f);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #2c679f), color-stop(.5, #2c679f), color-stop(.5, #2c679f), to(#2c679f));
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	border:0;
+	cursor:pointer;
+}
+.disbutton {
+	height: 31px;
+	color: #FFF;
+	text-decoration: none;
+	font-size: 11px;
+	font-family:Tahoma;
+	font-weight:bold;
+	text-transform:uppercase;
+	text-align: center;
+	padding:5px 15px;
+    *padding:5px 5px;
+	background: #fdc805;
+	background: -moz-linear-gradient(top, #fdc805, #fdc805 50%, #fdc805 51%, #fdc805);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fdc805), color-stop(.5, #fdc805), color-stop(.5, #fdc805), to(#fdc805));
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	border:0;
+	cursor:pointer;
+}
+.button:hover {
+	padding:5px 15px;
+        *padding:5px 5px;
+	background: #fdc805;
+	background: -moz-linear-gradient(top, #fdc805, #fdc805 50%, #fdc805 51%, #fdc805);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fdc805), color-stop(.5, #fdc805), color-stop(.5, #fdc805), to(#fdc805));
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	border:0;
+	cursor:pointer;
+	color:#FFF;
+}
+.trSelected {
+	background: #fdc805;	
+}
+/*...........button& selected graed .....................*/
+/*....for pagging.......add by jig*/
+#pagger
+{
+padding:3px 0;}
+
+#pagger a {
+	border:1px #2c679f solid;
+	color:#2c679f;
+	text-decoration:none;
+	padding:2px 4px;
+	margin: 0 2px;
+}
+#pagger a:hover {
+	color:#fdc805;
+}
+#pagger a span {
+	font-weight:bold;
+}
+#pagger a.disabled {
+	border:1px #999999 solid;
+	color:#999999;
+}
+#pagger a.selected {
+	background:#2c679f;
+	color:#FFF;
+}
+#pagger input {
+	margin: 0 2px;
+	padding: 1px;
+	width: 25px;
+}
+/*.....for pagging .....*/
