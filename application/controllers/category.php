@@ -19,10 +19,9 @@ class category extends CI_Controller {
 			redirect(BASE_URL);
 			exit;
 		}
-		$cat_id = $this->catId;
-		$data2 = $this->category_model->getMetaData($cat_id);
-		$data['meta_keywords'] = $data2[0]->meta_keywords;
-		$data['meta_description'] = $data2[0]->meta_description;
+		$data2 = $this->category_model->getMetaData($this->catId);
+		$data['meta_keywords'] = $data2['meta_keywords'];
+		$data['meta_description'] = $data2['meta_description'];
 		$this->load->view('header/header',$data);
 		unset($data);
 		unset($data2);

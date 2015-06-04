@@ -29,12 +29,14 @@ class attribute_model extends CI_Model
 	        $whStr .= " AND attribute like '%".$whArr[0]."%' ";
 	    }
         $q = $this->db->query("select count(*) as cnt from game_attribute where 1=1 $whStr ");
-	    return $q->result()[0]->cnt;
+	    $row = $q->result();
+	    return $row[0]->cnt;
 	}
 	function get_record($id)
 	{
 		$query = $this->db->get_where('game_attribute', array('id' => $id), 1);
-		return $query->result()[0];
+		$row = $query->result();
+		return $row[0];
 	}
 	function stepUp($catId)
 	{

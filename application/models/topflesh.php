@@ -17,8 +17,7 @@ class topflesh extends CI_Model
 		{
 			foreach($q->result() as $row){
 				$data[] = $row;
-			}
-			
+			}			
 		}
 		return $data;		
 	}
@@ -29,12 +28,14 @@ class topflesh extends CI_Model
 	        $whStr .= " AND title like '%".$whArr[0]."%' ";
 	    }
         $q = $this->db->query("select count(*) as cnt from tbl_top_flesh where 1=1 $whStr ");
-	    return $q->result()[0]->cnt;
+		$row = $q->result();
+	    return $row[0]->cnt;
 	}
 	function get_record($id)
 	{
 		$query = $this->db->get_where('tbl_top_flesh', array('id' => $id), 1);
-		return $query->result()[0];
+		$row = $query->result();
+		return $row[0];
 	}
 	function updateImage($imgpath,$Id)
 	{

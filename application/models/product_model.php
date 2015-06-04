@@ -51,12 +51,14 @@ class product_model extends CI_Model
 					JOIN game_category as c ON subc.parent_id = c.id 
 					WHERE 1=1 $whStr";
         $q = $this->db->query($query);
-	    return $q->result()[0]->cnt;
+		$row = $q->result();
+	    return $row[0]->cnt;
 	}
 	function get_record($id)
 	{
 		$query = $this->db->get_where('game_product', array('id' => $id), 1);
-		return $query->result()[0];
+		$row = $query->result();
+		return $row[0];
 	}
 	function loadMenu()
 	{
@@ -195,6 +197,29 @@ class product_model extends CI_Model
 				$data[] = $row;
 			}
 		}
+		return $data;
+	}
+	function getMetaData($pId)
+	{
+		$data = array();
+		$row = $this->get_record($pId);
+		$data['meta_keywords'] = $row->meta_keywords;
+		$data['meta_description'] = $row->meta_description;
+	    return $data;
+	}
+	function getProductDetail($pId)
+	{
+		$data = array();
+		$q = $this->db->query("select * from game_get_product where pId = ?",array($pId));
+		$row = $q->result();
+		$data['pId'] = $row[0]->pId;
+		$data['cat_id'] = $row[0]->cat_id;
+		$data['pkey'] = $row[0]->pkey;
+		$data['p_name'] = $row[0]->p_name;
+		$data['p_inventory'] = $row[0]->p_inventory;
+		$data['p_desc'] = $row[0]->p_desc;
+		$data['pimgs'] = $row[0]->pimgs;
+		$data['attr'] = $row[0]->attr;
 		return $data;
 	}
 }

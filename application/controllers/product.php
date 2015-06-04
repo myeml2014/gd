@@ -1,5 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 class product extends CI_Controller {	
+	public $productId;
 	function __construct()
 	{
 		parent::__construct();
@@ -10,33 +11,31 @@ class product extends CI_Controller {
 	public function index($page='')
 	{
 		$data = array();
-		$this->getCatId($page);
-		$data = $this->category_model->loadMenu();
-		if(!isset($this->parentId))
+		$this->productId = $this->getProductId($page);
+		if(!isset($this->productId))
 		{
 			redirect(BASE_URL);
 			exit;
 		}
-		$cat_id = $this->catId;
-		$data2 = $this->category_model->getMetaData($cat_id);
-		$data['meta_keywords'] = $data2[0]->meta_keywords;
-		$data['meta_description'] = $data2[0]->meta_description;
+		$data = $this->category_model->loadMenu();
+		$data2 = $this->category_model->getMetaData($this->productId);
+		$data['meta_keywords'] = $data2['meta_keywords'];
+		$data['meta_description'] = $data2['meta_description'];
+		$data['zoomJs'] = true;
 		$this->load->view('header/header',$data);
 		unset($data);
 		unset($data2);
-		
-		$data = $this->category_model->getAllSubcategoryAll();
-		$data['parentId'] = $this->parentId;
-		$data['page'] = $page;
-		if($this->parentId != 0)
-		{
-			$data['product'] = $this->category_model->getAllProductAll($this->catId);
-			$data['attribute'] = $this->category_model->getAllAttribute();
-		}
-		$this->load->view('category/category',$data);
+		$data = $this->product_model->getProductDetail($this->productId);
+		$this->load->view('product/product',$data);
 		unset($data);
 		$data = $this->footer_links_model->getAllFooterLinks();
 		$this->load->view('header/footer',$data);
 		unset($data);
+	}
+	function getProductId($page)
+	{
+		$query = $this->db->get_where('game_product', array('index_key' => $page), 1);
+		$row = $query->result();
+		return $row[0]->id;
 	}
 }

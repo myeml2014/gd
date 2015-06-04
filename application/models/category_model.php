@@ -36,12 +36,14 @@ class category_model extends CI_Model
 	        $whStr .= " AND cat_desc like '%".$whArr[1]."%' ";
 	    }
         $q = $this->db->query("select count(*) as cnt from game_category where parent_id=0 $whStr ");
-	    return $q->result()[0]->cnt;
+		$row = $q->result();
+	    return $row[0]->cnt;
 	}
 	function get_record($id)
 	{
 		$query = $this->db->get_where('game_category', array('id' => $id), 1);
-		return $query->result()[0];
+		$row = $query->result();
+		return $row[0];
 	}
 	function loadMenu()
 	{
@@ -188,7 +190,8 @@ class category_model extends CI_Model
 	        $whStr .= " AND cat_desc like '%".$whArr[2]."%' ";
 	    }
         $q = $this->db->query("select count(id) as cnt from (select * from game_sub_category where 1=1 $whStr ) as jig");
-	    return $q->result()[0]->cnt;
+		$row = $q->result();
+	    return $row[0]->cnt;
 	}
 	function getAllProductAll($sCat)
 	{
@@ -209,7 +212,8 @@ class category_model extends CI_Model
 		if($q->num_rows()>0)
 		{
 			foreach($q->result() as $row){
-				$data[] = $row;
+				$data['meta_keywords'] = $row->meta_keywords;
+				$data['meta_description'] = $row->meta_description;
 			}
 		}
 		return $data;

@@ -56,12 +56,14 @@ class Adminuser extends CI_Model
 	        $whStr .= " AND email like '%".$whArr[2]."%' ";
 	    }
         $q = $this->db->query("select count(*) as cnt from tbl_admin where id>0 $whStr ");
-	    return $q->result()[0]->cnt;
+		$row = $q->result();
+	    return $row[0]->cnt;
 	}
 	function get_record($id)
 	{
 		$query = $this->db->get_where('tbl_admin', array('id' => $id), 1);
-		return $query->result()[0];
+		$row = $query->result();
+	    return $row[0];
 	}
 	function checkisUserExists($userName,$id=0)
 	{

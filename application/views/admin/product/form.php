@@ -51,7 +51,7 @@ var msg_status = '<?php echo $this->lang->line('req_cat_status'); ?>';
 </tr>
 <tr>
 	<td colspan="8" align="left" >
-	<table width="100%" style="border: 1px solid" >
+	<table width="100%" >
 <?php
 $data = $this->attribute_model->getAllAttribute();
 $i=0;
