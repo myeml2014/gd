@@ -32,9 +32,11 @@ $lang['home_main_menu']='Main Menu';
 $lang['msg_insert']='Record inserted sucessfully.';
 $lang['msg_update']='Record updated sucessfully.';
 $lang['msg_delete']='Record deleted sucessfully.';
+$lang['msg_exist']='Record already Exist.';
 $lang['confirm_delete']='Are you sure you want to delete this record?';
 $lang['home_footer_links']='Footer Links';
 $lang['home_product']='Product';
+$lang['home_country']='Country';
 $lang['home_attribute']='Attribute';
 $lang['home_feature_product']='Feaure Product';
 
@@ -71,6 +73,8 @@ $lang['req_sub_cat_nm']='Please Enter Sub Category Name';
 $lang['req_cat_in_menu']='Please Select Display In Main Menu';
 $lang['req_cat_status']='Please Select Status';
 
+/*...........................Country*/
+$lang['country']='Country';
 /*..................................top flesh*/
 $lang['req_img_title']='Please Enter Image Title';
 $lang['req_img']='Please Select Image';
@@ -85,4 +89,6 @@ $lang['req_p_nm']='Please Enter Product Name';
 $lang['req_p_cat']='Please Select Category Name';
 $lang['req_p_sub_cat']='Please Select Sub Category Name';
 $lang['featured_products'] = 'Featured Products';
+/*...................................Country*/
+$lang['req_c_country'] = 'Please Enter Country Name';
 ?>

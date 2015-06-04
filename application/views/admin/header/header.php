@@ -61,6 +61,7 @@ $(document).ready(function() {
 			<a  href="<?php echo BASE_URL;?>admin/footer_links" <?php if($this->uri->segment(2) == "footer_links")echo 'style="background-color: #066;color: #FFF;";'?>><?php echo $this->lang->line('home_footer_links'); ?></a>
 			<a  href="<?php echo BASE_URL;?>admin/product" <?php if($this->uri->segment(2) == "product")echo 'style="background-color: #066;color: #FFF;";'?>><?php echo $this->lang->line('home_product'); ?></a>
 			<a  href="<?php echo BASE_URL;?>admin/attribute" <?php if($this->uri->segment(2) == "attribute")echo 'style="background-color: #066;color: #FFF;";'?>><?php echo $this->lang->line('home_attribute'); ?></a>
+			<a  href="<?php echo BASE_URL;?>admin/country" <?php if($this->uri->segment(2) == "country")echo 'style="background-color: #066;color: #FFF;";'?>><?php echo $this->lang->line('home_country'); ?></a>
 			<a  href="<?php echo BASE_URL;?>admin/feature_product" <?php if($this->uri->segment(2) == "feature_product")echo 'style="background-color: #066;color: #FFF;";'?>><?php echo $this->lang->line('home_feature_product'); ?></a>
 			<?php
 			if($this->session->userdata('user_id') == '-1')
