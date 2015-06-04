@@ -56,6 +56,10 @@ class footer_links extends CI_Controller {
 	function save($arg)
 	{
 		$objResponse=new xajaxResponse();
+		if($this->footer_links_model->checkIsExists($arg['txtTitle']))
+		{
+		    return $objResponse->alert($this->lang->line('msg_exist'));
+		}
 	    $arrVal = array();
       	$arrVal['link_title'] = $arg['txtTitle'];
 	    $arrVal['content'] = $arg['txtOther'];
@@ -78,6 +82,10 @@ class footer_links extends CI_Controller {
 	{
 		$objResponse=new xajaxResponse();
 		$arrVal = array();
+		if($this->footer_links_model->checkIsExists($arg['txtTitle'],$id))
+		{
+		    return $objResponse->alert($this->lang->line('msg_exist'));
+		}
 		$arrVal['link_title'] = $arg['txtTitle'];
       	$arrVal['content'] = $arg['txtOther'];
 		$lnk_nm = str_replace("/","_",$arg['txtTitle']);

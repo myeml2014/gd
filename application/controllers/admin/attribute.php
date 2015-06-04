@@ -55,6 +55,10 @@ class attribute extends CI_Controller {
 	function save($arg)
 	{
 		$objResponse=new xajaxResponse();
+		if($this->attribute_model->checkIsExists($arg['txtTitle']))
+		{
+			return $objResponse->alert($this->lang->line('msg_exist'));
+		}
 	    $arrVal = array();
       	$arrVal['attribute'] = $arg['txtTitle'];
 		$arrVal['added_by'] = $this->session->userdata('user_id');
@@ -72,6 +76,10 @@ class attribute extends CI_Controller {
 	function edit($id,$arg)
 	{
 		$objResponse=new xajaxResponse();
+		if($this->attribute_model->checkIsExists($arg['txtTitle']))
+		{
+		    return $objResponse->alert($this->lang->line('msg_exist'));
+		}
 		$arrVal = array();
 		$arrVal['attribute'] = $arg['txtTitle'];
       	$arrVal['added_by'] = $this->session->userdata('user_id');

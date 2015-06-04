@@ -63,4 +63,13 @@ class footer_links_model extends CI_Model
 		}
 		return $content;	
 	}
+	function checkIsExists($txt,$id='')
+	{
+		if($id == '')
+	    $q = $this->db->query("select count(*) as cnt from game_footer_links where link_title = ?",array($txt));
+		else 
+		$q = $this->db->query("select count(*) as cnt from game_footer_links where id != ? and link_title = ?",array($id,$txt));
+	    $row = $q->result();
+	    return $row[0]->cnt;
+	}
 }

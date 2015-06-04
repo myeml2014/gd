@@ -55,6 +55,10 @@ class top_flesh extends CI_Controller {
 	function save($arg)
 	{
 		$objResponse=new xajaxResponse();
+		if($this->topflesh->checkIsExists($arg['txtTitle']))
+		{
+		    return $objResponse->alert($this->lang->line('msg_exist'));
+		}
 	    $arrVal = array();
       	$arrVal['title'] = $arg['txtTitle'];
 	    $arrVal['detail'] = $arg['txtOther'];
@@ -79,6 +83,10 @@ class top_flesh extends CI_Controller {
 	function edit($id,$arg)
 	{
 		$objResponse=new xajaxResponse();
+		if($this->topflesh->checkIsExists($arg['txtTitle'],$id))
+		{
+		    return $objResponse->alert($this->lang->line('msg_exist'));
+		}
 		$arrVal = array();
 		$arrVal['title'] = $arg['txtTitle'];
       	$arrVal['detail'] = $arg['txtOther'];

@@ -52,4 +52,13 @@ class topflesh extends CI_Model
 		}
 		return $data;	
 	}
+	function checkIsExists($txt,$id='')
+	{
+		if($id == '')
+	    $q = $this->db->query("select count(*) as cnt from tbl_top_flesh where title = ?",array($txt));
+		else 
+		$q = $this->db->query("select count(*) as cnt from tbl_top_flesh where id != ? and title = ?",array($id,$txt));
+	    $row = $q->result();
+	    return $row[0]->cnt;
+	}
 }

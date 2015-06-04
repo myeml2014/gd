@@ -230,4 +230,13 @@ class category_model extends CI_Model
 		}
 		return $data;
 	}
+	function checkIsExists($catNm,$id='')
+	{
+		if($id == '')
+	    $q = $this->db->query("select count(*) as cnt from game_category where cat_name = ?",array($catNm));
+		else 
+		$q = $this->db->query("select count(*) as cnt from game_category where id != ? and cat_name = ?",array($id,$catNm));
+	    $row = $q->result();
+	    return $row[0]->cnt;
+	}
 }

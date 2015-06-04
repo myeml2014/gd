@@ -88,4 +88,10 @@ class attribute_model extends CI_Model
 		}
 		return $data;
 	}
+	function checkIsExists($txt)
+	{
+	    $q = $this->db->query("select count(*) as cnt from game_attribute where attribute = ?",array($txt));
+	    $row = $q->result();
+	    return $row[0]->cnt;
+	}
 }

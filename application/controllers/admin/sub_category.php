@@ -61,7 +61,10 @@ class sub_category extends CI_Controller {
 	function save($arg)
 	{
 		$objResponse=new xajaxResponse();
-		
+		if($this->category_model->checkIsExists($arg['txtSubCatNm']))
+		{
+		    return $objResponse->alert($this->lang->line('msg_exist'));
+		}
      	$arrVal = array();
 		$arrVal['cat_name'] = $arg['txtSubCatNm'];
 		$arrVal['parent_id'] = $arg['selCat'];
@@ -97,6 +100,10 @@ class sub_category extends CI_Controller {
 	function edit($id,$arg)
 	{
 		$objResponse=new xajaxResponse();
+		if($this->category_model->checkIsExists($arg['txtSubCatNm'],$id))
+		{
+		    return $objResponse->alert($this->lang->line('msg_exist'));
+		}
 		$arrVal = array();
 		$arrVal['cat_name'] = $arg['txtSubCatNm'];
 		$arrVal['parent_id'] = $arg['selCat'];

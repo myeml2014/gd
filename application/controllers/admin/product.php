@@ -82,7 +82,10 @@ class Product extends CI_Controller {
 	function save($arg)
 	{
 		$objResponse=new xajaxResponse();
-		
+		if($this->product_model->checkIsExists($arg['txtPNm']))
+		{
+		    return $objResponse->alert($this->lang->line('msg_exist'));
+		}
      	$arrVal = array();
 		$arrVal['cat_id'] = $arg['selSubCat'];
 		$arrVal['p_name'] = $arg['txtPNm'];

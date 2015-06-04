@@ -222,4 +222,13 @@ class product_model extends CI_Model
 		$data['attr'] = $row[0]->attr;
 		return $data;
 	}
+	function checkIsExists($pNm,$id='')
+	{
+		if($id == '')
+	    $q = $this->db->query("select count(*) as cnt from game_product where p_name = ?",array($pNm));
+		else 
+		$q = $this->db->query("select count(*) as cnt from game_product where id != ? and p_name = ?",array($id,$pNm));
+	    $row = $q->result();
+	    return $row[0]->cnt;
+	}
 }

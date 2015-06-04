@@ -68,7 +68,7 @@ class adminList extends CI_Controller {
         $arrVal['username'] = $arg['txtUsername'];
         $arrVal['password'] = md5($arg['txtPassword']);
         $arrVal['status'] = $arg['selStatus'];
-	$arrVal['added_by'] = $this->session->userdata('user_id');
+		$arrVal['added_by'] = $this->session->userdata('user_id');
         $sucess = $this->db->insert('tbl_admin',$arrVal);
         if($sucess)
         {
