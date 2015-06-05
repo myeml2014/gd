@@ -34,29 +34,29 @@ SPORTS TV/MOVIES MUSIC HISTORIC FOOD MASCOT CUSTOM QR CODES
                         <div class="row margin_top">
                                <?php
 							   $i = 0;
-							   foreach($cat_id as $id)
+							   foreach($fp as $p)
 							   {
 									if(($i+1)%3 == 0)
 									$is_last = " last";
 									else
 									$is_last = "";
-									if(file_exists("images/cat_imgs/".$cat_image[$i]))
-									$img_path = BASE_URL."images/cat_imgs/".$cat_image[$i];
+									if(file_exists("images/p_imgs/".$p->pId."/".$p->pimg))
+									$img_path = BASE_URL."images/p_imgs/".$p->pId."/".$p->pimg;
 									else
 									$img_path = BASE_URL."images/noimage.png";
 									
-									$cat_link = BASE_URL."category/".$index_key[$i];
+									$p_link = BASE_URL."product/".$p->pkey;
 							   	?>
 						    		<div class="col4 <?php echo $is_last;?>">
 		                                <div class="row">
         		                        	<div class="radius_box">
-                                    		<div class="box_img"><a href="<?php echo $cat_link;?>"><img src="<?php echo $img_path;?>" /></a></div>
-                                            <div class="shop"><a href="<?php echo $cat_link;?>"><img src="<?php echo BASE_URL;?>images/shopnow.png" /></a></div>
+                                    		<div class="box_img"><a href="<?php echo $p_link;?>"><img src="<?php echo $img_path;?>" /></a></div>
+                                            <div class="shop"><a href="<?php echo $p_link;?>"><img src="<?php echo BASE_URL;?>images/shopnow.png" /></a></div>
                                     	</div>
                 						</div>
                                         <div class="row">
                                         	<div class="radius_blue_box">
-                                            	<div class="box_hed"><a href="<?php echo $cat_link;?>" class="box_hed"><?php echo $cat_nm[$i];?></a></div>
+                                            	<div class="box_hed"><a href="<?php echo $p_link;?>" class="box_hed"><?php echo $p->p_name;?></a></div>
                                             </div>
                                         </div>
                                 </div>

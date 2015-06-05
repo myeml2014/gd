@@ -239,4 +239,16 @@ class category_model extends CI_Model
 	    $row = $q->result();
 	    return $row[0]->cnt;
 	}
+	function getAllFeatureProduct()
+	{
+		$data = array();
+		$q = $this->db->query("select * from game_get_product where is_feature_p = 1");
+		if($q->num_rows()>0)
+		{
+			foreach($q->result() as $row){
+				$data[] = $row;
+			}
+		}
+		return $data;
+	}
 }
