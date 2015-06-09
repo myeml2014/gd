@@ -17,6 +17,12 @@ class product extends CI_Controller {
 			redirect(BASE_URL);
 			exit;
 		}
+
+		$this->xajax->register(XAJAX_FUNCTION, array('addToCart',&$this,'addToCart'));
+		$this->xajax->processRequest();
+		$this->xajax->configure('javascript URI',BASE_URL);
+		$data['xajax_js'] = $this->xajax->getJavascript(BASE_URL);
+		
 		$data = $this->category_model->loadMenu();
 		$data2 = $this->category_model->getMetaData($this->productId);
 		$data['meta_keywords'] = $data2['meta_keywords'];
@@ -37,5 +43,11 @@ class product extends CI_Controller {
 		$query = $this->db->get_where('game_product', array('index_key' => $page), 1);
 		$row = $query->result();
 		return $row[0]->id;
+	}
+	function addToCart($pId)
+	{
+		$objResponse=new xajaxResponse();
+		$objResponse->alert("1");
+		return $objResponse;
 	}
 }

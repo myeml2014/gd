@@ -170,21 +170,7 @@
     </div>
     <div class="row">
     	<div class="list3">
-        	<ul>
-            	<li>Your guest of honor can make a wish from underneath this festive party hat.</li>      
-                <li>The easy-to-assemble, adjustable hat offers a one-size-fits-all celebration.</li>
-                <li>The paper football helmet is made from 14 pt high density white posterboard that’s liquid laminated for a glossy sheen.</li>
-                <li>Perfect personalized party favor for theme parties, sporting events, birthday bashes or just good-natured fun time.
-</li>
-                <li>Made in the USA.</li>           
-                <li>Additional paper party hats are also available; contact your customer service representative for the full selection.
-</li>
-                <li>Size, flat: 15-5/8" x 27-1/8".
-</li>           
-                <li>Your price includes a white imprint on your choice of a colored helmet.</li>           
-                <li>Set-up charge: add $40.</li>
-				<li>Ready to ship in : 5 business days *.</li>
-            </ul>
+        	<?php echo $full_desc;?>
         </div>
     </div>
     <div class="row">

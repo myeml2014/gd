@@ -193,10 +193,17 @@ class category_model extends CI_Model
 		$row = $q->result();
 	    return $row[0]->cnt;
 	}
-	function getAllProductAll($sCat)
+	function getAllProductAll($sCat,$keyWord='')
 	{
 		$data = array();
-	    $q = $this->db->query("select * from game_get_product where cat_id =?",array($sCat));
+		if($sCat == "search")
+		{
+			$q = $this->db->query("select * from game_get_product where p_name LIKE ?",array("%".$keyWord."%"));
+		}
+		else
+		{
+			$q = $this->db->query("select * from game_get_product where cat_id =?",array($sCat));
+		}
 		if($q->num_rows()>0)
 		{
 			foreach($q->result() as $row){

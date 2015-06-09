@@ -46,7 +46,6 @@ var msg_status = '<?php echo $this->lang->line('req_cat_status'); ?>';
 	</td>
 	<td width="10%" align="left"></td>
 	<td align="left"></td>
-	
 </tr>
 </table>
 <input type="hidden" id="pkId" name="pkId" >

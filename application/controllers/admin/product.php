@@ -31,7 +31,7 @@ class Product extends CI_Controller {
 		$headerData['xajax_js'] = $this->xajax->getJavascript(BASE_URL);
 		
       	$headerData['onload'] = true; 
-		$headerData['addTinymce'] = false;
+		$headerData['addTinymce'] = true;
 		$headerData['module_js'] = $modulePathUrl.'product.js';
 		$this->load->view('admin/header/header',$headerData);
 		$this->load->view('admin/product/product',$data);
@@ -61,6 +61,7 @@ class Product extends CI_Controller {
 		$objResponse->assign("txtMetaKeyword","value",$data->meta_data);
 		$objResponse->assign("txtMetaDesc","value",$data->meta_desc);
 		$objResponse->assign("selStatus","value",$data->is_active);
+		$objResponse->script("setTinyMceVal(".json_encode($data->full_desc).")");
 		unset($data2);
 		unset($data);
 		$data = $this->product_model->getAllAttribute($id);
@@ -90,6 +91,7 @@ class Product extends CI_Controller {
 		$arrVal['cat_id'] = $arg['selSubCat'];
 		$arrVal['p_name'] = $arg['txtPNm'];
 		$arrVal['p_desc'] = $arg['txtPDesc'];
+		$arrVal['full_desc'] = $arg['txtFullDesc'];
 		$arrVal['meta_data'] = $arg['txtMetaKeyword'];
 		$arrVal['meta_desc'] = $arg['txtMetaDesc'];
 		$arrVal['is_active'] = $arg['selStatus'];
@@ -135,6 +137,7 @@ class Product extends CI_Controller {
 		$arrVal['cat_id'] = $arg['selSubCat'];
 		$arrVal['p_name'] = $arg['txtPNm'];
 		$arrVal['p_desc'] = $arg['txtPDesc'];
+		$arrVal['full_desc'] = $arg['txtFullDesc'];
 		$arrVal['meta_data'] = $arg['txtMetaKeyword'];
 		$arrVal['meta_desc'] = $arg['txtMetaDesc'];
 		$arrVal['is_active'] = $arg['selStatus'];

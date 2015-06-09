@@ -6,7 +6,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="keywords" content="<?php echo ((isset($meta_keywords))?$meta_keywords:''); ?>">
 <meta name="description" content="<?php echo ((isset($meta_description))?$meta_description:''); ?>">
+<script type="text/javascript">
+var BaseUrl = '<?php echo BASE_URL;?>';
+</script>
 <script type="text/javascript" src="<?php echo BASE_URL;?>js/jquery.min.js"></script>
+<script type="text/javascript" src="<?php echo BASE_URL;?>js/common_front.js"></script>
 <?php
 if(isset($zoomJs) && $zoomJs == true)
 {
@@ -65,6 +69,7 @@ $(function () {
   });
 });
 </script>
+<?php echo (isset($xajax_js))?$xajax_js:'';?>
 </head>
 <body>
 <div id="container">
@@ -89,23 +94,27 @@ $(function () {
                         	<div class="top_strip_text"><a href="">Support</a></div>
                             <div class="top_strip_text">|</div>
                             
-                             <div class=" fl_left"><img src="<?php echo BASE_URL;?>images/profile.png" /></div>
+                            <div class=" fl_left"><img src="<?php echo BASE_URL;?>images/profile.png" /></div>
                         	<div class="top_strip_text"><a href="">Profile</a></div>
                             <div class="top_strip_text">|</div>
                         	
-                            
-                             <div class=" fl_left"><img src="<?php echo BASE_URL;?>images/setting.png" /></div>
+                            <div class=" fl_left"><img src="<?php echo BASE_URL;?>images/setting.png" /></div>
                         	<div class="top_strip_text"><a href="">Setting</a></div>
                             <div class="top_strip_text">|</div>
                             
-                             <div class=" fl_left"><img src="<?php echo BASE_URL;?>images/shopping_cart.png" /></div>
-                        	<div class="top_strip_text"><a href="">e-commerce shopping cart</a></div>
+                            <div class=" fl_left"><img src="<?php echo BASE_URL;?>images/shopping_cart.png" /></div>
+                        	<div class="top_strip_text"><a href="<?php echo BASE_URL;?>cart">e-commerce shopping cart
+							<span id="spCart" style="background-color:red;">&nbsp;
+							<?php
+							$q = $this->db->query('SELECT count(DISTINCT p_id) as cnt FROM game_cart WHERE u_id = \'\' OR sess_id = \''.session_id().'\' ');
+							$row = $q->result();
+							echo $row[0]->cnt;
+							?>&nbsp;
+							</span></a></div>
                             <div class="top_strip_text">|</div>
-                            
-                             <div class=" fl_left"><img src="<?php echo BASE_URL;?>images/client_login.png" /></div>
+                            <div class=" fl_left"><img src="<?php echo BASE_URL;?>images/client_login.png" /></div>
                         	<div class="top_strip_text"><a href="">Client Login</a></div>
                             <div class="top_strip_text">|</div>
-                            
                         	<div class="top_strip_text"><a href="">Campus Ambassador</a></div>
                         </div>
                     </div>
@@ -118,10 +127,10 @@ $(function () {
                     </div>
                     <div class="col46 last">
                         <div class="row">
-                        	<div class="col9"><div class=" fl_left" style="width:100%;"><input type="text" class="search_box" value="search for keyword(s)..." />
+                        	<div class="col9"><div class=" fl_left" style="width:100%;"><input id="txtHeadSearch" type="text" class="search_box" value="<?php echo (isset($keyword) && $keyword !='')?$keyword:'search for keyword(s)...'?>" onkeydown="filter(event)" onfocus="searchTxtFocus(1)" onblur="searchTxtFocus(0)" />
                         	</div></div>
                             <div class="col3 last">
-                            		<a href=""><div class="search_button">Search</div></a>
+                            		<a href="javascript:void(0)" onclick="javascript:searchProduct()"><div class="search_button" >Search</div></a>
                             </div>
                         </div>	
                     </div>

@@ -12,7 +12,6 @@
 							$selectedCatArr = array();
 							foreach($cid as $id)
 							{
-							
 								if($catNm != $cname[$i])
 								{
 									if($catNm !='')
@@ -34,7 +33,7 @@
 									$str .= '<div class=" hed_text3" onclick="javascript:location.href=\''.BASE_URL.'category/'.$ckey[$i].'\'">'.$cname[$i].'</div>';
 									$str .= '</div>';
 									$str .= '<div class="row">';
-									
+
 									$SstrEven .= '<div class="col67 last">';
 									$SstrEven .= '<div class="reg_text3">';
 									
@@ -76,7 +75,7 @@
                    <div class="row">
 							<?php
 							$flgLast = 1;
-							if($parentId == 0)
+							if($parentId == 0 && $page != "search")
 							{
 								foreach($selectedCatArr as $ind)
 								{
@@ -133,14 +132,14 @@
 													</div>
 													<div class="row margin_top">
 														<div class="col8 last">
-                                                		<div class="reg_text" onclick="javascript:location.href='<?php echo BASE_URL.'product/'.$val->pkey; ?>'">
-                                                        	<?php echo $val->p_name;?><br>
+                                                		<div class="reg_text">
+                                                        	<span onclick="javascript:location.href='<?php echo BASE_URL.'product/'.$val->pkey; ?>'"><?php echo $val->p_name;?></span><br>
                                                             Size: <?php echo $attrValArr[$attribute['Size']];?> <br>
                                                             Price: $<?php echo $attrValArr[$attribute['Price']]; ?>
                                                         </div>
 														</div>
 														<div class="col4-1 last">
-															<a href="<?php echo BASE_URL.'product/'.$val->pkey; ?>"><div class="addto_cart">ADD TO CART</div></a>
+															<a href="javascript: void(0);" onclick="javascript:xajax_addToCart(<?php echo $val->pId;?>,'<?php echo $attrValArr[$attribute['Price']]; ?>');"><div class="addto_cart">ADD TO CART</div></a>
 														</div>
 													</div>         
 											</div>

@@ -218,6 +218,7 @@ class product_model extends CI_Model
 		$data['p_name'] = $row[0]->p_name;
 		$data['p_inventory'] = $row[0]->p_inventory;
 		$data['p_desc'] = $row[0]->p_desc;
+		$data['full_desc'] = $row[0]->full_desc;
 		$data['pimgs'] = $row[0]->pimgs;
 		$data['attr'] = $row[0]->attr;
 		return $data;

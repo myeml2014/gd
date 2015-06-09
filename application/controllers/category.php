@@ -12,16 +12,27 @@ class category extends CI_Controller {
 	public function index($page='')
 	{
 		$data = array();
-		$this->getCatId($page);
+		if($page != "search")
+		{
+			$this->getCatId($page);
+		}
 		$data = $this->category_model->loadMenu();
-		if(!isset($this->parentId))
+		if(!isset($this->parentId) && $page != "search")
 		{
 			redirect(BASE_URL);
 			exit;
 		}
-		$data2 = $this->category_model->getMetaData($this->catId);
-		$data['meta_keywords'] = $data2['meta_keywords'];
-		$data['meta_description'] = $data2['meta_description'];
+		
+		$this->xajax->register(XAJAX_FUNCTION, array('addToCart',&$this,'addToCart'));
+		$this->xajax->processRequest();
+		$this->xajax->configure('javascript URI',BASE_URL);
+		$data['xajax_js'] = $this->xajax->getJavascript(BASE_URL);
+		if($page != "search")
+		{
+			$data2 = $this->category_model->getMetaData($this->catId);
+			$data['meta_keywords'] = $data2['meta_keywords'];
+			$data['meta_description'] = $data2['meta_description'];
+		}
 		$this->load->view('header/header',$data);
 		unset($data);
 		unset($data2);
@@ -29,9 +40,17 @@ class category extends CI_Controller {
 		$data = $this->category_model->getAllSubcategoryAll();
 		$data['parentId'] = $this->parentId;
 		$data['page'] = $page;
-		if($this->parentId != 0)
+		if($this->parentId != 0 || $page == "search")
 		{
-			$data['product'] = $this->category_model->getAllProductAll($this->catId);
+			if($page == "search")
+			{
+				$data['keyword'] = $this->uri->segment(3);
+				$data['product'] = $this->category_model->getAllProductAll("search",$data['keyword']);	
+			}
+			else
+			{
+				$data['product'] = $this->category_model->getAllProductAll($this->catId);	
+			}
 			$data['attribute'] = $this->category_model->getAllAttribute();
 		}
 		$this->load->view('category/category',$data);
@@ -49,5 +68,25 @@ class category extends CI_Controller {
 		   $this->catId = $row->id;
 		   $this->parentId = $row->parent_id;
 		}
+	}
+	function addToCart($pId,$price)
+	{
+		$objResponse=new xajaxResponse();
+		$arrVal = array();
+		$arrVal['p_id'] = $pId;
+		$arrVal['sess_id'] = session_id();
+		$arrVal['quentity'] = 1;
+		$arrVal['price'] = $price;
+		if(0)
+		{
+			$arrVal['u_id'] = $u_id;
+		}
+		
+		$sucess = $this->db->insert('game_cart',$arrVal);
+		if($sucess)
+		{
+			$objResponse->script('goTocart("'.str_replace("/","slesh",$this->uri->uri_string).'")');
+		}
+		return $objResponse;
 	}
 }

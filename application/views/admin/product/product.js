@@ -104,3 +104,7 @@ function getMaxFileId()
 	});
 	return max+1;
 }
+function setTinyMceVal(contentVal)
+{
+	tinyMCE.get("txtFullDesc").setContent(contentVal);
+}

@@ -4,6 +4,15 @@ var msg_cat = '<?php echo $this->lang->line('req_p_cat'); ?>';
 var msg_sub_cat = '<?php echo $this->lang->line('req_p_sub_cat'); ?>';
 var msg_status = '<?php echo $this->lang->line('req_cat_status'); ?>';
 </script>
+<script type="text/javascript" >
+tinymce.init({
+	selector:'#txtFullDesc',
+	 plugins: [
+        "advlist autolink lists link image charmap print preview anchor",
+        "searchreplace visualblocks code fullscreen"
+    ]
+	});
+</script>
 <div id="divForm" align="center" style="" >
 <div class="adminTitle" style="width: 100%" align="left">
 <?php echo $this->lang->line('home_product'); ?>
@@ -116,6 +125,10 @@ echo $str;
 	<td width="10%" align="left"></td>
 	<td align="left"></td>
 	
+</tr>
+<tr>
+	<td>Full Description</td>
+	<td colspan="6"><textarea id="txtFullDesc" name="txtFullDesc"></textarea></textarea></td>
 </tr>
 </table>
 <input type="hidden" id="pkId" name="pkId" >

@@ -1,15 +1,6 @@
 <script language="javascript">
 var msg_img_title = '<?php echo $this->lang->line('req_title'); ?>';
 </script>
-<script type="text/javascript" >
-tinymce.init({
-	selector:'#txtOther',
-	 plugins: [
-        "advlist autolink lists link image charmap print preview anchor",
-        "searchreplace visualblocks code fullscreen"
-    ]
-	});
-</script>
 <div id="divForm" align="center" style="" >
 <div class="adminTitle" style="width: 100%" align="left">
 <?php echo $this->lang->line('home_footer_links'); ?>
