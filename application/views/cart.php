@@ -34,7 +34,7 @@ foreach($cart as $o)
 <tr>
 	<td></td>
 	<td colspan="2" align="right"><input type="button" value="Continue Shoping" onclick="location.href='<?php echo BASE_URL.str_replace("slesh","/",$bakUrl);?>'"></td>
-	<td><input type="button" value="checkout"></td>
+	<td><input type="button" value="Place Order"></td>
 </tr>
 </tbody>
 </table>

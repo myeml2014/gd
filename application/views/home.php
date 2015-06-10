@@ -50,7 +50,7 @@ SPORTS TV/MOVIES MUSIC HISTORIC FOOD MASCOT CUSTOM QR CODES
 						    		<div class="col4 <?php echo $is_last;?>">
 		                                <div class="row">
         		                        	<div class="radius_box">
-                                    		<div class="box_img"><a href="<?php echo $p_link;?>"><img src="<?php echo $img_path;?>" /></a></div>
+                                    		<div class="box_img"><a href="<?php echo $p_link;?>"><img src="<?php echo $img_path;?>" style="width:263px;height:268px;" /></a></div>
                                             <div class="shop"><a href="<?php echo $p_link;?>"><img src="<?php echo BASE_URL;?>images/shopnow.png" /></a></div>
                                     	</div>
                 						</div>

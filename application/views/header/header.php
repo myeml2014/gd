@@ -106,7 +106,10 @@ $(function () {
                         	<div class="top_strip_text"><a href="<?php echo BASE_URL;?>cart">e-commerce shopping cart
 							<span id="spCart" style="background-color:red;">&nbsp;
 							<?php
-							$q = $this->db->query('SELECT count(DISTINCT p_id) as cnt FROM game_cart WHERE u_id = \'\' OR sess_id = \''.session_id().'\' ');
+							$qs = '';
+							if(isset($u_id))
+								$qs = ' OR u_id = \'\' ';
+							$q = $this->db->query('SELECT count(DISTINCT p_id) as cnt FROM game_cart WHERE sess_id = \''.session_id().'\' '.$qs);
 							$row = $q->result();
 							echo $row[0]->cnt;
 							?>&nbsp;
