@@ -11,6 +11,7 @@ var BaseUrl = '<?php echo BASE_URL;?>';
 </script>
 <script type="text/javascript" src="<?php echo BASE_URL;?>js/jquery.min.js"></script>
 <script type="text/javascript" src="<?php echo BASE_URL;?>js/common_front.js"></script>
+<script type="text/javascript" src="<?php echo BASE_URL;?>js/common.js"></script>
 <?php
 if(isset($zoomJs) && $zoomJs == true)
 {
@@ -116,7 +117,7 @@ $(function () {
 							</span></a></div>
                             <div class="top_strip_text">|</div>
                             <div class=" fl_left"><img src="<?php echo BASE_URL;?>images/client_login.png" /></div>
-                        	<div class="top_strip_text"><a href="">Client Login</a></div>
+                        	<div class="top_strip_text"><a href="<?php echo BASE_URL;?>users">Client Login</a></div>
                             <div class="top_strip_text">|</div>
                         	<div class="top_strip_text"><a href="">Campus Ambassador</a></div>
                         </div>

@@ -159,10 +159,10 @@ class category_model extends CI_Model
 	{
 	    $whStr = '';
 		if(isset($whArr[0]) && $whArr[0] != ''){
-	        $whStr .= " AND sub_cat_name like '%".$whArr[0]."%' ";
+	        $whStr .= " AND cat_name like '%".$whArr[0]."%' ";
 	    }
 	    if(isset($whArr[1]) && $whArr[1] != ''){
-	        $whStr .= " AND cat_name like '%".$whArr[1]."%' ";
+	        $whStr .= " AND sub_cat_name like '%".$whArr[1]."%' ";
 	    }
 		if(isset($whArr[2]) && $whArr[2] != ''){
 	        $whStr .= " AND cat_desc like '%".$whArr[2]."%' ";

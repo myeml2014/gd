@@ -9,6 +9,7 @@ class cart extends CI_Controller {
 	}
 	public function index($bakUrl = '')
 	{
+		$this->clearOldData();
 		$data = $this->category_model->loadMenu();
 		$this->xajax->register(XAJAX_FUNCTION, array('removeFromCart',&$this,'removeFromCart'));
 		$this->xajax->register(XAJAX_FUNCTION, array('editQuentity',&$this,'editQuentity'));
@@ -39,5 +40,10 @@ class cart extends CI_Controller {
 	{
 		$objResponse=new xajaxResponse();
 		return $objResponse;
+	}
+	function clearOldData()
+	{
+		$dt = date('Y').'-'.date('m').'-'.(date(d)-1);
+		$this->db->delete("game_cart","datetime < '$dt' and u_id = 0");
 	}
 }
