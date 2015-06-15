@@ -27,4 +27,17 @@ class cart_model extends CI_Model
 		}
 		return $data;
 	}
+	function getIdFromPid($pId)
+	{
+		if($this->session->userdata('UserID'))
+		$sstr = " OR u_id = ".$this->session->userdata('UserID');
+		$q = $this->db->query("select id from game_cart where p_id = ? limit 0,1 and (sess_id = ? $sstr)",array($pId,session_id()));
+		$row = $q->result();
+	    return $row[0]->id;
+	}
+	function addQuentity($pId)
+	{
+		$id= $this->getIdFromPid($pId);
+		$this->db->query("insert into game_cart (p_id,u_id,sess_id,quentity,price) (SELECT  s.p_id,s.u_id,s.sess_id,s.quentity,s.price from game_cart as s where s.id = ?)",array($id));
+	}
 }

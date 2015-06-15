@@ -135,7 +135,7 @@
                                                 		<div class="reg_text">
                                                         	<span onclick="javascript:location.href='<?php echo BASE_URL.'product/'.$val->pkey; ?>'"><?php echo $val->p_name;?></span><br>
                                                             Size: <?php echo $attrValArr[$attribute['Size']];?> <br>
-                                                            Price: $<?php echo $attrValArr[$attribute['Price']]; ?>
+                                                            Price: <?php echo $attrValArr[$attribute['Price']]; ?><?php echo CURRENCY;?>
                                                         </div>
 														</div>
 														<div class="col4-1 last">

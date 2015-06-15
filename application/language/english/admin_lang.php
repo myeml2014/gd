@@ -24,6 +24,9 @@ $lang['require_valid_email']='Please Enter Valid Email';
 $lang['home_welcome_msg']='Welcome to Gameday Administrator Area';
 $lang['home_logout']='Logout';
 $lang['home_setup']='SETUP';
+$lang['home_settings']='SETTINGS';
+$lang['home_order_process']='ORDER PROCESS';
+$lang['home_orders'] = 'ORDERS';
 $lang['home_admin_account']='Admin Account';
 $lang['home_category']='Category';
 $lang['home_sub_category']='Sub Category';
@@ -37,6 +40,8 @@ $lang['confirm_delete']='Are you sure you want to delete this record?';
 $lang['home_footer_links']='Footer Links';
 $lang['home_product']='Product';
 $lang['home_country']='Country';
+$lang['home_state']='State';
+$lang['home_users']='Users';
 $lang['home_attribute']='Attribute';
 $lang['home_feature_product']='Feaure Product';
 
@@ -91,4 +96,8 @@ $lang['req_p_sub_cat']='Please Select Sub Category Name';
 $lang['featured_products'] = 'Featured Products';
 /*...................................Country*/
 $lang['req_c_country'] = 'Please Enter Country Name';
+/*....................................User*/
+$lang['name'] = 'Name';
+$lang['email'] = 'Email';
+$lang['detail'] = 'Detail';
 ?>

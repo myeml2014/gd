@@ -57,12 +57,18 @@ $(document).ready(function() {
 			<a  href="<?php echo BASE_URL;?>admin/adminList" <?php if($this->uri->segment(2) == "adminList")echo 'style="background-color: #066;color: #FFF;";'?>><?php echo $this->lang->line('home_admin_account'); ?></a>
 			<a  href="<?php echo BASE_URL;?>admin/category" <?php if($this->uri->segment(2) == "category")echo 'style="background-color: #066;color: #FFF;";'?>><?php echo $this->lang->line('home_category'); ?></a>
 			<a  href="<?php echo BASE_URL;?>admin/sub_category" <?php if($this->uri->segment(2) == "sub_category")echo 'style="background-color: #066;color: #FFF;";'?>><?php echo $this->lang->line('home_sub_category'); ?></a>
+			<a  href="<?php echo BASE_URL;?>admin/product" <?php if($this->uri->segment(2) == "product")echo 'style="background-color: #066;color: #FFF;";'?>><?php echo $this->lang->line('home_product'); ?></a>
+			<a  href="<?php echo BASE_URL;?>admin/users" <?php if($this->uri->segment(2) == "users")echo 'style="background-color: #066;color: #FFF;";'?>><?php echo $this->lang->line('home_users'); ?></a>
+			<span><?php echo $this->lang->line('home_order_process'); ?></span>
+			<a  href="<?php echo BASE_URL;?>admin/orders" <?php if($this->uri->segment(2) == "orders")echo 'style="background-color: #066;color: #FFF;";'?>><?php echo $this->lang->line('home_orders'); ?></a>
+			<span><?php echo $this->lang->line('home_settings'); ?></span>
+			<a  href="<?php echo BASE_URL;?>admin/country" <?php if($this->uri->segment(2) == "country")echo 'style="background-color: #066;color: #FFF;";'?>><?php echo $this->lang->line('home_country'); ?></a>
+			<a  href="<?php echo BASE_URL;?>admin/state" <?php if($this->uri->segment(2) == "state")echo 'style="background-color: #066;color: #FFF;";'?>><?php echo $this->lang->line('home_state'); ?></a>
+			<a  href="<?php echo BASE_URL;?>admin/attribute" <?php if($this->uri->segment(2) == "attribute")echo 'style="background-color: #066;color: #FFF;";'?>><?php echo $this->lang->line('home_attribute'); ?></a>
 			<a  href="<?php echo BASE_URL;?>admin/top_flesh" <?php if($this->uri->segment(2) == "top_flesh")echo 'style="background-color: #066;color: #FFF;";'?>><?php echo $this->lang->line('home_top_flesh'); ?></a>
 			<a  href="<?php echo BASE_URL;?>admin/footer_links" <?php if($this->uri->segment(2) == "footer_links")echo 'style="background-color: #066;color: #FFF;";'?>><?php echo $this->lang->line('home_footer_links'); ?></a>
-			<a  href="<?php echo BASE_URL;?>admin/product" <?php if($this->uri->segment(2) == "product")echo 'style="background-color: #066;color: #FFF;";'?>><?php echo $this->lang->line('home_product'); ?></a>
-			<a  href="<?php echo BASE_URL;?>admin/attribute" <?php if($this->uri->segment(2) == "attribute")echo 'style="background-color: #066;color: #FFF;";'?>><?php echo $this->lang->line('home_attribute'); ?></a>
-			<a  href="<?php echo BASE_URL;?>admin/country" <?php if($this->uri->segment(2) == "country")echo 'style="background-color: #066;color: #FFF;";'?>><?php echo $this->lang->line('home_country'); ?></a>
-			<a  href="<?php echo BASE_URL;?>admin/feature_product" <?php if($this->uri->segment(2) == "feature_product")echo 'style="background-color: #066;color: #FFF;";'?>><?php echo $this->lang->line('home_feature_product'); ?></a>
+			
+			
 			<?php
 			if($this->session->userdata('user_id') == '-1')
 			{

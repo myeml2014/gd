@@ -7,7 +7,63 @@ class users_model extends CI_Model {
     {
 		parent::__construct();
 	} 
-
+	
+	public function email_check($email){
+		$sql="Select * from game_user where email = ?";
+		$query = $this->db->query($sql,array($email));
+		$num = $query->num_rows();
+		if($num>0){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	function get_all($start = 0,$whArr=array())
+	{
+	    $whStr = '';
+		if(isset($whArr[0]) && $whArr[0] != ''){
+	        $whStr .= " AND id = '".$whArr[0]."'";
+	    }
+		if(isset($whArr[1]) && $whArr[1] != ''){
+	        $whStr .= " AND CONCAT(fname,' ',lname) like '%".$whArr[1]."%' ";
+	    }
+	    if(isset($whArr[2]) && $whArr[2] != ''){
+	        $whStr .= " AND email like '%".$whArr[0]."%' ";
+	    }
+		
+		$data = array();
+		$query = "select * from game_user where 1=1 ".$whStr." order by fname,lname limit $start,10";
+	
+	    $q = $this->db->query($query);
+		if($q->num_rows()>0)
+		{
+			foreach($q->result() as $row){
+				$data[] = $row;
+			}
+			
+		}
+		
+		return $data;
+	}
+	function get_all_count($whArr=array())
+	{
+	    $whStr = '';
+		if(isset($whArr[0]) && $whArr[0] != ''){
+	        $whStr .= " AND id = '".$whArr[0]."'";
+	    }
+		if(isset($whArr[1]) && $whArr[1] != ''){
+	        $whStr .= " AND CONCAT(fname,' ',lname) like '%".$whArr[1]."%' ";
+	    }
+	    if(isset($whArr[2]) && $whArr[2] != ''){
+	        $whStr .= " AND email like '%".$whArr[0]."%' ";
+	    }		
+		$query = "select count(id) as cnt from game_user WHERE 1=1 $whStr";       
+		$q = $this->db->query($query);
+		$chckTest = $q->result();
+		return $chckTest[0]->cnt;
+	}
+	
+	/*.........................................remove below*/
 	public function checkMailExist($email)
     {
 	        $tableName ="game_user";	        
@@ -55,19 +111,6 @@ class users_model extends CI_Model {
 			return false;
 			}
 	
-	}
-	public function email_check($email){
-			$sql="Select * from game_user where email='".$email."'";
-			$query = $this->db->query($sql);
-			//$result_arr = $query->result_array();
-			$num = $query->num_rows();
-			//echo '<pre>';print_r($num);die();
-			if($num>0){
-			return true;
-			}else{
-			return false;
-			}
-			
 	}
 	
 	function get_record($id)

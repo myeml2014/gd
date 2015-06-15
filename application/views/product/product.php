@@ -1,3 +1,13 @@
+<?php
+$attrVal = explode(",",$attr);
+$attrValArr = array();
+foreach($attrVal as $av)
+{
+	$avArr = explode("#",$av);
+	$attrValArr[$avArr[0]] = $avArr[1];
+	unset($avArr);
+}
+?>
 <div id="section">
 <div class="wrap">		
 <div class="row mar_top">
@@ -155,7 +165,7 @@
                                             </div>
                                         </div>
                                     <div class="row">
-                                    	<a href=""><div class="next_button">Next</div></a>
+                                    	<a href="javascript:void(0)" onclick="javascript:xajax_addToCart(<?php echo $pId;?>,'<?php echo $attrValArr[$attribute['Price']]; ?>');"><div class="next_button">Add To Cart</div></a>
                                     </div>                                    
                         	</div>
                         </div>

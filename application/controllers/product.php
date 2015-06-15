@@ -18,12 +18,11 @@ class product extends CI_Controller {
 			exit;
 		}
 
+		$data = $this->category_model->loadMenu();
 		$this->xajax->register(XAJAX_FUNCTION, array('addToCart',&$this,'addToCart'));
 		$this->xajax->processRequest();
 		$this->xajax->configure('javascript URI',BASE_URL);
 		$data['xajax_js'] = $this->xajax->getJavascript(BASE_URL);
-		
-		$data = $this->category_model->loadMenu();
 		$data2 = $this->category_model->getMetaData($this->productId);
 		$data['meta_keywords'] = $data2['meta_keywords'];
 		$data['meta_description'] = $data2['meta_description'];
@@ -32,6 +31,7 @@ class product extends CI_Controller {
 		unset($data);
 		unset($data2);
 		$data = $this->product_model->getProductDetail($this->productId);
+		$data['attribute'] = $this->category_model->getAllAttribute();
 		$this->load->view('product/product',$data);
 		unset($data);
 		$data = $this->footer_links_model->getAllFooterLinks();
@@ -44,10 +44,24 @@ class product extends CI_Controller {
 		$row = $query->result();
 		return $row[0]->id;
 	}
-	function addToCart($pId)
+	function addToCart($pId,$price)
 	{
 		$objResponse=new xajaxResponse();
-		$objResponse->alert("1");
+		$arrVal = array();
+		$arrVal['p_id'] = $pId;
+		$arrVal['sess_id'] = session_id();
+		$arrVal['quentity'] = 1;
+		$arrVal['price'] = $price;
+		if($this->session->userdata('UserID'))
+		{
+			$arrVal['u_id'] = $this->session->userdata('UserID');
+		}
+		
+		$sucess = $this->db->insert('game_cart',$arrVal);
+		if($sucess)
+		{
+			$objResponse->script('goTocart("'.str_replace("/","slesh",$this->uri->uri_string).'")');
+		}
 		return $objResponse;
 	}
 }

@@ -77,9 +77,9 @@ class category extends CI_Controller {
 		$arrVal['sess_id'] = session_id();
 		$arrVal['quentity'] = 1;
 		$arrVal['price'] = $price;
-		if(0)
+		if($this->session->userdata('UserID'))
 		{
-			$arrVal['u_id'] = $u_id;
+			$arrVal['u_id'] = $this->session->userdata('UserID');
 		}
 		
 		$sucess = $this->db->insert('game_cart',$arrVal);

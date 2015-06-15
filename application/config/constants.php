@@ -39,7 +39,8 @@ define('ADMIN_HEADER',SITE_ROOT.APPPATH."views/admin/header/");
 define('ADMIN_VIEW_PATH',SITE_ROOT.APPPATH."views/admin/");
 define('IMAGE_PATH', SITE_ROOT."images/");
 define('LANG_FLG', '2');   //2 for english.
-define('MAIN_FOLDER', 'ug');
+define('MAIN_FOLDER', '');
+define('CURRENCY', '$');
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */

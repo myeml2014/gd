@@ -17,10 +17,17 @@ function validate(frm)
 		$("#repass").focus();
 		return false;
 	}
+	if($("#spEmail").html() != '')
+	{
+		alert("Email Already Exists.");
+		$("#email").focus();
+		return false;
+	}
 
 }
 </script>
 <form name="frmReg" id="frmReg" method="post" action="<?php echo BASE_URL."users/signup";?>" onsubmit="return validate(this)">
+<input type="hidden"  name="hdnTime" id="hdnTime" value="<?php echo time();?>" >
 <div id="section">
 <div class="wrap">
 		<div class="row">
@@ -31,6 +38,9 @@ function validate(frm)
             		<div class="row">
                 		<div class="form_field">
                         		<div class="row">
+                                	<div align="center"><span class="red_clr"><?php echo validation_errors(); ?></span></div>
+                                </div>
+								<div class="row">
                                 	<div class="col33  form_text51"><span class="red_clr">*</span> First Name</div>
                                     <div class="col9 last"><input name="fname" id="fname" type="text" class="text_field3" required></div>
                                 </div>
@@ -40,7 +50,7 @@ function validate(frm)
                                 </div>
                                	<div class="row">
                                 	<div class="col33  form_text51"><span class="red_clr">*</span> Email</div>
-                                    <div class="col9 last"><input name="email" id="email" type="text" class="text_field3" required></div>
+                                    <div class="col9 last"><input name="email" id="email" type="text" class="text_field3" onblur="xajax_emailExists(this.value)" required><span id="spEmail" class="red_clr"></span></div>
                                 </div>
                                 <div class="row">
                                 	<div class="col33  form_text51">Password</div>

@@ -71,6 +71,18 @@ $(function () {
 });
 </script>
 <?php echo (isset($xajax_js))?$xajax_js:'';?>
+<?php
+if(isset($onload) && $onload == true)
+{
+?>
+<script language="javascript" type="text/javascript">
+$(document).ready(function() {
+	xajax_load();
+});
+</script>
+<?php
+}
+?>
 </head>
 <body>
 <div id="container">
@@ -117,7 +129,7 @@ $(function () {
 							</span></a></div>
                             <div class="top_strip_text">|</div>
                             <div class=" fl_left"><img src="<?php echo BASE_URL;?>images/client_login.png" /></div>
-                        	<div class="top_strip_text"><a href="<?php echo BASE_URL;?>users">Client Login</a></div>
+                        	<div class="top_strip_text"><a href="<?php echo ($this->session->userdata('UserID'))?BASE_URL.'users/logout':BASE_URL.'users';?>"><?php echo ($this->session->userdata('UserID'))?'Logout':'Client Login';?></a></div>
                             <div class="top_strip_text">|</div>
                         	<div class="top_strip_text"><a href="">Campus Ambassador</a></div>
                         </div>
