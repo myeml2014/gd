@@ -67,6 +67,7 @@ class cart extends CI_Controller {
 		{
 			$this->cart_model->addQuentity($pId);
 		}
+		$objResponse->script('xajax_load();');
 		return $objResponse;
 	}
 	function clearOldData()

@@ -31,7 +31,7 @@ class cart_model extends CI_Model
 	{
 		if($this->session->userdata('UserID'))
 		$sstr = " OR u_id = ".$this->session->userdata('UserID');
-		$q = $this->db->query("select id from game_cart where p_id = ? limit 0,1 and (sess_id = ? $sstr)",array($pId,session_id()));
+		$q = $this->db->query("select id from game_cart where p_id = ?  and (sess_id = ? $sstr) limit 0,1",array($pId,session_id()));
 		$row = $q->result();
 	    return $row[0]->id;
 	}

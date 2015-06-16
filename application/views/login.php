@@ -5,6 +5,7 @@
     </div>	
     <?php echo form_open('users/login',array('id'=>'login-form','name'=>'loginform')); ?>
 	<input type="hidden" name="ksubmit" value="vsubmit"/>
+	<input type="hidden" name="hdnIsOrder" id="hdnIsOrder" value="<?php echo (isset($is_order))?$is_order:'';?>" >
     <div class="row">
       <div class="col6">
         <div class="row">
@@ -15,22 +16,23 @@
             <div class="row">
               <div class="col33  form_text51"><span class="red_clr">*</span> User Name</div>
               <div class="col9 last">
-                <?php echo form_input('email',set_value('email'),'class="text_field3"'); ?>
+				<input type="text" id="email" name="email" class="text_field3">
            		<?php echo form_error('email'); ?>
               </div>
             </div>
             <div class="row">
               <div class="col33  form_text51"><span class="red_clr">*</span> Password</div>
               <div class="col9 last">
-               <?php echo form_password('password',set_value('password'),'class="text_field3"'); ?><?php echo form_error('password'); ?>
+				<input type="password" name="password" id="password" class="text_field3">
+                <?php echo form_error('password'); ?>
               </div>
             </div>
             <div class="row">
               <div class="col33">&nbsp;</div>
               <div class="col9 last">
 			 
-                <div class="submit-but" onclick="frmsubmit();">Login</div>
-                <div class="submit-but">Clear</div>
+				<input type="submit" value="Login" onclick="frmsubmit();" class="submit-but">
+                <input type="button" value="Clear" class="submit-but" onclick="$('#email').val('');$('#password').val('');">
               </div>
             </div>
             <div class="row margin_top">
@@ -46,7 +48,7 @@
                   <div class="row sub_hed2 margin_top2">You are not a member?</div>
                 </div>
                 <div class="row ">
-                  <div class="col9 last"> <a href="<?php echo base_url();?>users/signup">
+                  <div class="col9 last"> <a href="<?php echo base_url();?>users/signup<?php echo (isset($is_order))?'/'.$is_order:'';?>">
                     <div class="submit-but">REGISTER NOW</div>
                     </a> </div>
                 </div>

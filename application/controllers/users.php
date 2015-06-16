@@ -23,7 +23,7 @@ class Users extends CI_Controller {
 		}
 	}
 
-	public function signup($id = '')
+	public function signup($is_order = '')
 	{
 		if($this->input->post('btnSubmit'))
 		{
@@ -54,7 +54,15 @@ class Users extends CI_Controller {
 				$sucess = $this->db->insert('game_user',$arrVal);
 				$ins_id = $this->db->insert_id();
 				$this->sendEmail($ins_id,$this->input->post('email'),$this->input->post('fname'),$this->input->post('lname'));
+				if($is_order == 'order')
+				redirect('order');
+				else
 				redirect('users');
+				exit;
+			}
+			else
+			{
+				redirect('users/signup'.(isset($is_order))?'/'.$is_order:'');
 			}
 		}
 		$data = $this->category_model->loadMenu();
@@ -130,9 +138,16 @@ class Users extends CI_Controller {
 				{
 					$array=array('UserID'=>$result['id'],'UserEmail'=>$result['email'],'full_name'=>$result['fname'].' '.$result['lname']);
 					$this->session->set_userdata($array);
+					$this->users_model->setCart($result['id']);
+					if($this->input->post('hdnIsOrder') == 'order')
+					redirect('order');
+					else
 					redirect('home');
 				}else{
 					$this->session->set_flashdata('message','User does not exits for this email.');
+					if($this->input->post('hdnIsOrder') == 'order')
+					redirect('order');
+					else
 					redirect('users');
 				}
 			}
@@ -147,7 +162,7 @@ class Users extends CI_Controller {
 	{
 		$this->session->unset_userdata('UserID');
 		$this->session->sess_destroy();
-		redirect(BASE_URL.'home');
+		redirect(BASE_URL.'users');
 	}
 	public function sendEmail($id,$email,$fname,$lname)
 	{

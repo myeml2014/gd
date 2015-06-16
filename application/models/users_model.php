@@ -62,7 +62,18 @@ class users_model extends CI_Model {
 		$chckTest = $q->result();
 		return $chckTest[0]->cnt;
 	}
-	
+	function setCart($userId)
+	{
+		$query = "select GROUP_CONCAT(id) as ids from game_cart where u_id=0 and sess_id = '".session_id()."'";
+		$q = $this->db->query($query);
+		$chckTest = $q->result();
+		$ids = $chckTest[0]->ids;
+		if($ids != '')
+		{
+			$query = "update game_cart set u_id = $userId where id in($ids)";
+			$q = $this->db->query($query);
+		}
+	}
 	/*.........................................remove below*/
 	public function checkMailExist($email)
     {
