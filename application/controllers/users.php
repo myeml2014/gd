@@ -54,8 +54,14 @@ class Users extends CI_Controller {
 				$sucess = $this->db->insert('game_user',$arrVal);
 				$ins_id = $this->db->insert_id();
 				$this->sendEmail($ins_id,$this->input->post('email'),$this->input->post('fname'),$this->input->post('lname'));
-				if($is_order == 'order')
-				redirect('order');
+				if($this->input->post('hdnIsOrder') == 'order')
+				{
+					$array=array('UserID'=>$ins_id,'UserEmail'=>$this->input->post('email'),'full_name'=>$this->input->post('fname').' '.$this->input->post('lname'));
+					$this->session->set_userdata($array);
+					$this->users_model->setCart($ins_id);
+					redirect('order');
+					unset($array);
+				}
 				else
 				redirect('users');
 				exit;
@@ -77,6 +83,7 @@ class Users extends CI_Controller {
 		$data['id'] = $data1['id'];
 		$data['link_title']= $data1['link_title'];
 		$data['index_key']= $data1['index_key'];
+		$data['is_order'] = $is_order;
 		$this->load->view('header/template',$data);
 		unset($data);
 		unset($data1);

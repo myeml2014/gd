@@ -4,7 +4,7 @@ class order extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('category_model');
-		$this->load->model('topflesh');
+		$this->load->model('order_model');
 		$this->load->model('footer_links_model');
 	}
 	public function index()
@@ -15,7 +15,11 @@ class order extends CI_Controller {
 		unset($data);
 		if($this->session->userdata('UserID'))
 		{
-			
+			$data = array();
+			$data = getPremenentAdd($this->session->userdata('UserID'));
+			$data['other_add'] = getOtherAdd($this->session->userdata('UserID'));
+			$this->load->view('order/shippingaddress',$data);
+			unset($data);
 		}
 		else
 		{

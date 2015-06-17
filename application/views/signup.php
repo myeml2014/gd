@@ -28,6 +28,7 @@ function validate(frm)
 </script>
 <form name="frmReg" id="frmReg" method="post" action="<?php echo BASE_URL."users/signup";?>" onsubmit="return validate(this)">
 <input type="hidden"  name="hdnTime" id="hdnTime" value="<?php echo time();?>" >
+<input type="hidden" name="hdnIsOrder" id="hdnIsOrder" value="<?php echo (isset($is_order))?$is_order:'';?>" >
 <div id="section">
 <div class="wrap">
 		<div class="row">
