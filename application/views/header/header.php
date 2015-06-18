@@ -120,8 +120,8 @@ $(document).ready(function() {
 							<span id="spCart" style="background-color:red;">&nbsp;
 							<?php
 							$qs = '';
-							if(isset($u_id))
-								$qs = ' OR u_id = \'\' ';
+							if($this->session->userdata('UserID'))
+								$qs = ' OR u_id = \''.$this->session->userdata('UserID').'\' ';
 							$q = $this->db->query('SELECT count(DISTINCT p_id) as cnt FROM game_cart WHERE sess_id = \''.session_id().'\' '.$qs);
 							$row = $q->result();
 							echo $row[0]->cnt;

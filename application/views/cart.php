@@ -33,7 +33,11 @@ function renderJson(Obj)
 <div id="section">
 <div class="wrap">
 <div class="row"><div class="border_middle2">&nbsp;
-
+<div class="row" align="centre">
+	<span class="alertmsg">
+		<?php if($this->session->flashdata('msg')){echo "<br>".$this->session->flashdata('msg')."<br><br>";}  ?>
+	</span>
+</div>
 <table width="100%" border="1">
 <thead id="tkart">
 <tr>

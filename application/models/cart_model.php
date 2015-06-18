@@ -8,8 +8,8 @@ class cart_model extends CI_Model
 	function getMyCart()
 	{
 		$whStr = "";
-		if(isset($sessionUserId)){
-	        $whStr .= " or c.u_id = '$sessionUserId' ";
+		if($this->session->userdata('UserID')){
+	        $whStr .= " or c.u_id = '".$this->session->userdata('UserID')."' ";
 	    }
 		$data = array();
 		$qsr = "SELECT c.*, COUNT(c.p_id) AS cnt, SUM(c.price) AS p_total,p.p_name,p.index_key as pkey,(select img_path from game_images where p_id = c.p_id limit 1 )img_path

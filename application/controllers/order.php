@@ -9,15 +9,19 @@ class order extends CI_Controller {
 	}
 	public function index()
 	{
+		if($this->order_model->getMyCartCount()==0)
+		{
+			$this->session->set_flashdata('msg','Cart id Empty.');
+			redirect('cart');
+		}
 		$data = $this->category_model->loadMenu();
-		$data['bannerArr'] = $this->topflesh->getAllBanners();
 		$this->load->view('header/header',$data);
 		unset($data);
 		if($this->session->userdata('UserID'))
 		{
 			$data = array();
-			$data = getPremenentAdd($this->session->userdata('UserID'));
-			$data['other_add'] = getOtherAdd($this->session->userdata('UserID'));
+			$data = $this->order_model->getPremenentAdd($this->session->userdata('UserID'));
+			$data['other_add'] = $this->order_model->getOtherAdd($this->session->userdata('UserID'));
 			$this->load->view('order/shippingaddress',$data);
 			unset($data);
 		}

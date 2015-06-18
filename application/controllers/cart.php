@@ -33,9 +33,6 @@ class cart extends CI_Controller {
 	{
 		$data = array();
 		$objResponse=new xajaxResponse();
-		$whArr = array();
-		if($param != '')
-		$whArr = explode(",",$param);
 		$data = $this->cart_model->getMyCart();
 		$objResponse->script('renderJson('.json_encode($data).')');
 		
@@ -72,7 +69,7 @@ class cart extends CI_Controller {
 	}
 	function clearOldData()
 	{
-		$dt = date('Y').'-'.date('m').'-'.(date(d)-1);
+		$dt = date('Y').'-'.date('m').'-'.(date('d')-1);
 		$this->db->delete("game_cart","datetime < '$dt' and u_id = 0");
 	}
 }
