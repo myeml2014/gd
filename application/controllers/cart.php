@@ -27,7 +27,6 @@ class cart extends CI_Controller {
 		$data = $this->footer_links_model->getAllFooterLinks();
 		$this->load->view('header/footer',$data);
 		unset($data);
-		unset($data);
 	}
 	function load()
 	{

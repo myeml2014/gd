@@ -44,6 +44,14 @@ $lang['home_state']='State';
 $lang['home_users']='Users';
 $lang['home_attribute']='Attribute';
 $lang['home_feature_product']='Feaure Product';
+$lang['home_pending_orders'] = 'Pending Orders';
+$lang['home_confirm_orders'] = 'Confirm Orders';
+$lang['home_processing_orders'] = 'Processing Orders';
+$lang['home_qc_orders'] = 'Quality Check Orders';
+$lang['home_dispatched_orders'] = 'Dispatched Orders';
+$lang['home_delivered_orders'] = 'Delivered Orders';
+$lang['home_all_orders'] = 'All Orders';
+$lang['home_archive_orders'] = 'Archive Orders';
 
 /*.................................btn control*/
 $lang['btn_add']='ADD';
@@ -100,4 +108,7 @@ $lang['req_c_country'] = 'Please Enter Country Name';
 $lang['name'] = 'Name';
 $lang['email'] = 'Email';
 $lang['detail'] = 'Detail';
+/*...................................Order*/
+$lang['quantity'] = 'Quantity';
+$lang['total'] = 'Total';
 ?>

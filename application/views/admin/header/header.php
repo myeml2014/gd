@@ -6,7 +6,6 @@
 <meta name="keywords" content="<?php echo ((isset($meta_keywords))?$meta_keywords:''); ?>">
 <meta name="description" content="<?php echo ((isset($meta_description))?$meta_description:''); ?>">
 <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL;?>css/style_admin.css">
-<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL;?>css/thickbox.css">
 <?php echo (isset($xajax_js))?$xajax_js:'';?>
 <script language="javascript" type="text/javascript" src="<?php echo BASE_URL;?>js/jquery.min.js"></script>
 <?php
@@ -60,7 +59,14 @@ $(document).ready(function() {
 			<a  href="<?php echo BASE_URL;?>admin/product" <?php if($this->uri->segment(2) == "product")echo 'style="background-color: #066;color: #FFF;";'?>><?php echo $this->lang->line('home_product'); ?></a>
 			<a  href="<?php echo BASE_URL;?>admin/users" <?php if($this->uri->segment(2) == "users")echo 'style="background-color: #066;color: #FFF;";'?>><?php echo $this->lang->line('home_users'); ?></a>
 			<span><?php echo $this->lang->line('home_order_process'); ?></span>
-			<a  href="<?php echo BASE_URL;?>admin/orders" <?php if($this->uri->segment(2) == "orders")echo 'style="background-color: #066;color: #FFF;";'?>><?php echo $this->lang->line('home_orders'); ?></a>
+			<a  href="<?php echo BASE_URL;?>admin/orders/index/pending" <?php if($this->uri->segment(2) == "orders" && $this->uri->segment(4) == "pending")echo 'style="background-color: #066;color: #FFF;";'?>><?php echo $this->lang->line('home_pending_orders'); ?></a>
+			<a  href="<?php echo BASE_URL;?>admin/orders/index/confirm" <?php if($this->uri->segment(2) == "orders" && $this->uri->segment(4) == "confirm")echo 'style="background-color: #066;color: #FFF;";'?>><?php echo $this->lang->line('home_confirm_orders'); ?></a>
+			<a  href="<?php echo BASE_URL;?>admin/orders/index/processing" <?php if($this->uri->segment(2) == "orders" && $this->uri->segment(4) == "processing")echo 'style="background-color: #066;color: #FFF;";'?>><?php echo $this->lang->line('home_processing_orders'); ?></a>
+			<a  href="<?php echo BASE_URL;?>admin/orders/index/qc" <?php if($this->uri->segment(2) == "orders" && $this->uri->segment(4) == "qc")echo 'style="background-color: #066;color: #FFF;";'?>><?php echo $this->lang->line('home_qc_orders'); ?></a>
+			<a  href="<?php echo BASE_URL;?>admin/orders/index/dispatched" <?php if($this->uri->segment(2) == "orders" && $this->uri->segment(4) == "dispatched")echo 'style="background-color: #066;color: #FFF;";'?>><?php echo $this->lang->line('home_dispatched_orders'); ?></a>
+			<a  href="<?php echo BASE_URL;?>admin/orders/index/delivered" <?php if($this->uri->segment(2) == "orders" && $this->uri->segment(4) == "delivered")echo 'style="background-color: #066;color: #FFF;";'?>><?php echo $this->lang->line('home_delivered_orders'); ?></a>
+			<a  href="<?php echo BASE_URL;?>admin/orders" <?php if($this->uri->segment(2) == "orders"  && $this->uri->segment(4) == "")echo 'style="background-color: #066;color: #FFF;";'?>><?php echo $this->lang->line('home_all_orders'); ?></a>
+			<a  href="<?php echo BASE_URL;?>admin/orders/index/archive" <?php if($this->uri->segment(2) == "orders" && $this->uri->segment(4) == "archive")echo 'style="background-color: #066;color: #FFF;";'?>><?php echo $this->lang->line('home_archive_orders'); ?></a>
 			<span><?php echo $this->lang->line('home_settings'); ?></span>
 			<a  href="<?php echo BASE_URL;?>admin/country" <?php if($this->uri->segment(2) == "country")echo 'style="background-color: #066;color: #FFF;";'?>><?php echo $this->lang->line('home_country'); ?></a>
 			<a  href="<?php echo BASE_URL;?>admin/state" <?php if($this->uri->segment(2) == "state")echo 'style="background-color: #066;color: #FFF;";'?>><?php echo $this->lang->line('home_state'); ?></a>

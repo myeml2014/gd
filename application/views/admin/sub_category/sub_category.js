@@ -23,7 +23,7 @@ function renderJson(Obj,count)
 		tbl += "<td></td>";
 		tbl += "<td>"+item.sub_cat_name+"</td>";
 		tbl += "<td>"+item.cat_desc+"</td>";
-		tbl += "<td><img src='"+((item.cat_image == "")?BaseUrl+"images/noimage.png":BaseUrl+'images/cat_imgs/'+item.cat_image)+"'  width='50px' height='50px' ></td>";
+		tbl += "<td><img src='"+((item.cat_image == "" || item.cat_image == null)?BaseUrl+"images/noimage.png":BaseUrl+'images/cat_imgs/'+item.cat_image)+"'  width='50px' height='50px' ></td>";
 		tbl += "<td>"+item.status+"</td>";
 		tbl += "<td><input type='image' src='"+BaseUrl+"images/up.png' height='20px' onclick=\"xajax_updateOrder('up',"+item.id+")\"  />&nbsp;<input type='image' src='"+BaseUrl+"images/down.png' height='20px' onclick=\"xajax_updateOrder('down',"+item.id+")\"  /></td>";
 		tbl += "</tr>";

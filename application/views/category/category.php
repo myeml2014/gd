@@ -86,7 +86,7 @@
 								<div class="col48 <?php echo $cls;?>">
 										<div class="prod_img_bg">
 												<div class="row">
-													<div class="prod_img" onclick="javascript:location.href='<?php echo BASE_URL.'category/'.$skey[$ind]; ?>'"><img src="<?php echo ((is_file(IMAGE_PATH.'cat_imgs/'.$simg[$ind]))?BASE_URL.'images/cat_imgs/'.$simg[$ind]:BASE_URL.'images/noimage.png');?>" style="height:263px;width:263px;" /></div>
+													<div class="prod_img" onclick="javascript:location.href='<?php echo BASE_URL.'category/'.$skey[$ind]; ?>'"><img src="<?php echo ((is_file(IMAGE_PATH.'cat_imgs/'.$simg[$ind]))?BASE_URL.'images/cat_imgs/'.$simg[$ind]:BASE_URL.'images/noimage.png');?>"  /></div>
 												</div>
 												
 												<div class="row margin_top">
@@ -128,7 +128,7 @@
 									<div class="col48 <?php echo $cls;?>">
 											<div class="prod_img_bg">
 													<div class="row">
-														<div class="prod_img" onclick="javascript:location.href='<?php echo BASE_URL.'product/'.$val->pkey; ?>'"><img src="<?php echo ((is_file(IMAGE_PATH.'p_imgs/'.$val->pId.'/'.$val->pimg))?BASE_URL.'images/p_imgs/'.$val->pId.'/'.$val->pimg:BASE_URL.'images/noimage.png');?>" style="height:263px;width:263px;" /></div>
+														<div class="prod_img" onclick="javascript:location.href='<?php echo BASE_URL.'product/'.$val->pkey; ?>'"><img src="<?php echo ((is_file(IMAGE_PATH.'p_imgs/'.$val->pId.'/'.$val->pimg))?BASE_URL.'images/p_imgs/'.$val->pId.'/'.$val->pimg:BASE_URL.'images/noimage.png');?>" /></div>
 													</div>
 													<div class="row margin_top">
 														<div class="col8 last">

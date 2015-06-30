@@ -1,6 +1,39 @@
 <script language="javascript" type="text/javascript">
 function validate(f)
 {
+	if(f.rdoadd == '-1')
+	{
+		if($("#country").val() == '')
+		{
+			alert("Please Select Country.");
+			$("#country").focus();
+			return false;
+		}
+		if($("#state").val() == '')
+		{
+			alert("Please Select State.");
+			$("#state").focus();
+			return false;
+		}
+		if($("#add1").val() == '')
+		{
+			alert("Please Enter Address.");
+			$("#add1").focus();
+			return false;
+		}
+		if($("#city").val() == '')
+		{
+			alert("Please Enter City.");
+			$("#city").focus();
+			return false;
+		}
+		if($("#zip").val() == '')
+		{
+			alert("Please Enter Zip.");
+			$("#zip").focus();
+			return false;
+		}
+	}
 	document.loginform.action="<?php echo base_url();?>users/login";
 	document.loginform.submit();
 }
@@ -69,7 +102,7 @@ function usedAddress(val)
 			{
 			?>
 				<div class="row ">
-                  <div class="row sub_hed2 margin_top2"><input type="radio" id="rdoadd<?php echo $v['id'];?>" name="rdoadd" value="<?php echo $v['id'];?>" checked="checked" onclick="usedAddress(this.value)">Use This Address</div>
+                  <div class="row sub_hed2 margin_top2"><input type="radio" id="rdoadd<?php echo $v['id'];?>" name="rdoadd" value="<?php echo $v['id'];?>"  onclick="usedAddress(this.value)">Use This Address</div>
 				</div>
 				<div class="row ">
 					<div class="col33  form_text51">
@@ -92,6 +125,9 @@ function usedAddress(val)
 			<div class="row ">
                   <div class="row sub_hed2 margin_top2"><input type="radio" id="rdoadd2" name="rdoadd" value="-1" onclick="usedAddress(this.value)" >Add New Shipping Address</div>
             </div>
+			<div class="row">
+				<div align="center"><span class="red_clr"><?php echo validation_errors(); ?></span></div>
+			</div>
             <div class="row">
               <div class="col33  form_text51"><span class="red_clr">*</span> Select Country</div>
               <div class="col9 last">
@@ -119,17 +155,17 @@ function usedAddress(val)
 			<div class="row">
               <div class="col33  form_text51"><span class="red_clr">*</span> Address 1</div>
               <div class="col9 last">
-				<input type="text" id="add1" name="add1" class="text_field3" disabled="disabled">
+				<input type="text" id="add1" name="add1" class="text_field3" disabled="disabled" required >
               </div>
             </div>
             <div class="row">
-              <div class="col33  form_text51"><span class="red_clr">*</span> Address 2</div>
+              <div class="col33  form_text51"> Address 2</div>
               <div class="col9 last">
 				<input type="text" name="add2" id="add2" class="text_field3" disabled="disabled">
               </div>
             </div>
 			<div class="row">
-              <div class="col33  form_text51"><span class="red_clr">*</span> Address 3</div>
+              <div class="col33  form_text51"> Address 3</div>
               <div class="col9 last">
 				<input type="text" name="add3" id="add3" class="text_field3" disabled="disabled">
               </div>
@@ -137,19 +173,19 @@ function usedAddress(val)
 			<div class="row">
               <div class="col33  form_text51"><span class="red_clr">*</span> City</div>
               <div class="col9 last">
-				<input type="text" name="city" id="city" class="text_field3" disabled="disabled">
+				<input type="text" name="city" id="city" class="text_field3" disabled="disabled" required>
               </div>
             </div>
 			<div class="row">
               <div class="col33  form_text51"><span class="red_clr">*</span> Zip</div>
               <div class="col9 last">
-				<input type="text" name="zip" id="zip" class="text_field3" disabled="disabled">
+				<input type="text" name="zip" id="zip" class="text_field3" disabled="disabled" required>
               </div>
             </div>
             <div class="row">
               <div class="col33">&nbsp;</div>
               <div class="col9 last">
-				<input type="submit" value="Next" onclick="frmsubmit();" class="submit-but">
+				<input type="submit" value="Next" name="btnSubmit" onclick="frmsubmit();" class="submit-but">
               </div>
             </div>
           </div>

@@ -458,12 +458,11 @@ div.sdmenu {
 	font-family: Arial, sans-serif;
 	font-size: 12px;
 	padding-bottom: 10px;
-	background: url(bottom.gif) no-repeat  right bottom;
+	background: url(../images/bottom.gif) no-repeat  right bottom;
 	color: #fff;
 	margin-top: 3px;
 }
 div.sdmenu div {
-	background: url(title.gif) repeat-x;
 	overflow: hidden;
 }
 div.sdmenu div.collapsed {
@@ -474,7 +473,6 @@ div.sdmenu div span {
 	color: #FFFFFF;
 	cursor: default;
 	background-color: #2c679f;
-	background-image: url(expanded.gif);
 	background-repeat: no-repeat;
 	background-position: 10px center;
 	padding-right: 25px;
@@ -501,7 +499,7 @@ div.sdmenu div a {
 	padding-bottom: 5px;
 	padding-left: 28px;
 	background-color: #eee;
-	background-image: url(../admin/images/arrow.png);
+	background-image: url(../images/arrow.png);
 	background-repeat: no-repeat;
 	background-position: 10px center;
 	margin-left: 0px;
@@ -513,7 +511,7 @@ div.sdmenu div a:hover {
 	color: #fff;
 	text-decoration: none;
 	background-color: #066;
-	background-image: url(../admin/images/arrow-hover.png);
+	background-image: url(../images/arrow-hover.png);
 	background-repeat: no-repeat;
 	background-position: 10px center;
 }
@@ -552,7 +550,7 @@ div.sdmenu div a:hover {
 .reportlinks a
 {
 	color:#333333;
-	background-image:url(../admin/images/arrow.png);
+	background-image:url(../images/arrow.png);
 	background-repeat:no-repeat;
 	background-position:10px;
 	padding:25px;
@@ -560,7 +558,7 @@ div.sdmenu div a:hover {
 .reportlinks a:hover
 {
 	color:#333333;
-	background-image:url(../admin/images/arrow.png);
+	background-image:url(../images/arrow.png);
 	background-repeat:no-repeat;
 	background-position:10px;
 	padding:25px;

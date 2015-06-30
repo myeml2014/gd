@@ -119,9 +119,9 @@ function getFormPop(flg)
 		elm.style.display="none";
 	}
 }
-function fnfilter(e)
+function fnfilter(e,flg)
 {
-	if(e.keyCode==13)
+	if(e.keyCode==13 || flg == true)
 	{
 		var param='';
 		var sap = '';

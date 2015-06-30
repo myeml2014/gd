@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title><?php echo $Title;?></title>
+<title><?php echo (isset($Title))?$Title:'';?></title>
 <link href="<?php echo BASE_URL;?>css/login.css" rel="stylesheet" type="text/css">
 <script language="javascript">
 function SubmitForm()
