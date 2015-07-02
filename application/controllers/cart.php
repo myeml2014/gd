@@ -34,7 +34,6 @@ class cart extends CI_Controller {
 		$objResponse=new xajaxResponse();
 		$data = $this->cart_model->getMyCart();
 		$objResponse->script('renderJson('.json_encode($data).')');
-		
 		return $objResponse;
 	}
 	function removeFromCart($pId,$bakUrl)
