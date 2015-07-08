@@ -154,21 +154,21 @@ function validate(frm)
 			<table width="100%">
 				<tr>
 					<td align="right" width="40%">Change Status:</td>
-					<td align="left" width="10%">
+					<td align="left" width="10%"><?php echo $order_status;?>
 					<select id="selStatus" name="selStatus">
 						<option value="">-Select Status-</option>
 						<?php
-						if($order_status == 0)
+						if($order_status == 'Pending')
 							echo '<option value="1">Confirm</option>';
-						else if($order_status == 1)
+						else if($order_status == 'Confirm')
 							echo '<option value="2">Processing</option>';
-						else if($order_status == 2)
+						else if($order_status == 'Processing')
 							echo '<option value="3">QC</option>';
-						else if($order_status == 3)
+						else if($order_status == 'QC')
 							echo '<option value="4">Dispatched</option>';
-						else if($order_status == 4)
+						else if($order_status == 'Dispatched')
 							echo '<option value="5">Delivered</option>';
-						else if($order_status == 5)
+						else if($order_status == 'Delivered')
 							echo '<option value="6">Archive</option>';
 						?>
 					</select>

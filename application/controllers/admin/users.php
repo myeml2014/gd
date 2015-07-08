@@ -100,4 +100,12 @@ class users extends CI_Controller {
         }
 		return $objResponse;
 	}
+	function detail($userId)
+	{
+		$data = array();
+		$data = $this->users_model->getUserDetail($userId);
+		$data['catArr'] = $this->users_model->getCategryArr();
+		$this->load->view('admin/users/form',$data);	
+		unset($data);
+	}
 }

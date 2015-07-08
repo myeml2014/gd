@@ -74,61 +74,42 @@ class users_model extends CI_Model {
 			$q = $this->db->query($query);
 		}
 	}
-	/*.........................................remove below*/
-	public function checkMailExist($email)
-    {
-	        $tableName ="game_user";	        
-	        $data["email"] = $email;
-	        $query= $this->db->select()->from($tableName)->where($data)->get();
-	        $row = $query->row_array();
-	        
-	      if(count($row) > 0) 
-	      {
-	      	  $profileRow = array('userId'=>$row['user_id'],'fullame'=>$row['first_name'].' '.$row['last_name'],'email'=>$row['email']);    
-			 // echo '<pre>';print_r($profileRow);die();     
-              return $profileRow;
-        }else {
-            return false;
-        }    
-    }   	
-	
-	
-	/////for mail function on forgot password////
-    public function checkuserIdExisit()
-    {
-    		$userId = $this->getId(); 	    	
-	        $tableName ="game_user";	  	        
-	        $data["id"] = $userId;
-	       //echo $userId;die();	
-	        $query= $this->db->select('id')->from($tableName)->where("id",$userId)->get();
-//	       / echo $this->db->last_query();die;
-	      if ($query->num_rows() > 0) 
-	      {
-	      	  return "true";
-	      }
-	      else
-	      {
-	          return "false";
-	      }    
-    }  
-	
-	public function createRegisterUser($tableName,$data){
-	
-			$result=$this->db->insert($tableName,$data);
-			$libId=$this->db->insert_id();
-			if($result){
-			return $libId;
-			}else{
-			return false;
-			}
-	
-	}
-	
-	function get_record($id)
+	function getUserDetail($userId)
 	{
-		$query = $this->db->get_where('game_user', array('user_id' => $id), 1);
-		$objresult =  $query->result();
-		return $objresult[0];
+		$data = array();
+		$query = "SELECT u.*,c.country_name,s.state_nm
+					FROM game_user AS u
+					JOIN game_country AS c ON u.country_id = c.id
+					JOIN game_state AS s ON u.state_id = s.id 
+					WHERE u.id = ?";
+		$q = $this->db->query($query,array($userId));
+		foreach($q->result() as $row)
+		{
+			$data['email'] = $row->email;
+			$data['mobile'] = $row->mobile;
+			$data['fname'] = $row->fname;
+			$data['lname'] = $row->lname;
+			$data['address1'] = $row->address1;
+			$data['address2'] = $row->address2;
+			$data['address3'] = $row->address3;
+			$data['city'] = $row->city;
+			$data['country_name'] = $row->country_name;
+			$data['state_nm'] = $row->country_name;
+			$data['zip'] = $row->zip;
+			$data['child_birth_date'] = $row->child_birth_date;
+			$data['gender'] = $row->gender;
+			$data['cat_ids'] = $row->cat_ids;
+		}
+		return $data;
+	}
+	function getCategryArr()
+	{
+		$data = array();
+		$q = $this->db->get_where('game_category',array('parent_id'=>0,'is_active'=>1));
+		foreach($q->result() as $row){
+			$data[$row->id] = $row->cat_name;
+		}
+		return $data;
 	}
 }
 
